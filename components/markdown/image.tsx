@@ -14,7 +14,8 @@ export default function Image({
   if (!src) return null;
   return (
     <NextImage
-      src={src}
+      // TODO: inspect when readding images
+      src={typeof src === "string" ? src : URL.createObjectURL(src)}
       alt={alt}
       width={width as Width}
       height={height as Height}
