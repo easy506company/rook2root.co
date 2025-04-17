@@ -6,7 +6,7 @@ import {
 } from "@/lib/markdown";
 import { formatDate2, stringToDate } from "@/lib/utils";
 import { Metadata } from "next";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -41,7 +41,7 @@ function BlogCard({
   title,
   description,
   slug,
-  cover,
+  // cover,
   authors,
 }: BlogMdxFrontmatter & { slug: string }) {
   return (
