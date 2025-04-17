@@ -20,7 +20,7 @@ git push
 
 ## Tips
 
-Blog meta example:
+Article meta example:
 
 ---
 title: ""

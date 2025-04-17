@@ -22,13 +22,13 @@ export default function Home() {
       </p>
       {/* <div className="sm:flex sm:flex-row grid grid-cols-2 items-center sm;gap-5 gap-3 mb-8">
         <Link
-          href={`/docs${page_routes[0].href}`}
+          href={`/library${page_routes[0].href}`}
           className={buttonVariants({ className: "px-6", size: "lg" })}
         >
           Get Stared
         </Link>
         <Link
-          href="/blog"
+          href="/articles"
           className={buttonVariants({
             variant: "secondary",
             className: "px-6",
