@@ -10,7 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "AriaDocs - Blog",
+  title: "rook2root - Articles",
 };
 
 export default async function BlogIndexPage() {
@@ -50,7 +50,7 @@ function BlogCard({
       className="flex flex-col gap-2 items-start border rounded-md py-5 px-3 min-h-[400px]"
     >
       <h3 className="text-md font-semibold -mt-1 pr-7">{title}</h3>
-      <div className="w-full">
+      {/* <div className="w-full">
         <Image
           src={cover}
           alt={title}
@@ -59,7 +59,7 @@ function BlogCard({
           quality={80}
           className="w-full rounded-md object-cover h-[180px] border"
         />
-      </div>
+      </div> */}
       <p className="text-sm text-muted-foreground">{description}</p>
       <div className="flex items-center justify-between w-full mt-auto">
         <p className="text-[13px] text-muted-foreground">

@@ -4,12 +4,13 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: "export",
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "img.freepik.com/**",
-      },
-    ],
+    unoptimized: true,
+    // remotePatterns: [
+    //   {
+    //     protocol: "https",
+    //     hostname: "",
+    //   },
+    // ],
   },
   // if used turbopack
   // transpilePackages: ["next-mdx-remote"],

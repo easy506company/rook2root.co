@@ -125,7 +125,7 @@ function sluggify(text: string) {
 }
 
 function getDocsContentPath(slug: string) {
-  return path.join(process.cwd(), "/contents/docs/", `${slug}/index.mdx`);
+  return path.join(process.cwd(), "/contents/library/", `${slug}/index.mdx`);
 }
 
 function justGetFrontmatterFromMD<Frontmatter>(rawMd: string): Frontmatter {
@@ -149,7 +149,7 @@ export async function getAllChilds(pathString: string) {
     page_routes_copy.map(async (it) => {
       const totalPath = path.join(
         process.cwd(),
-        "/contents/docs/",
+        "/contents/library/",
         prevHref,
         it.href,
         "index.mdx"
@@ -157,7 +157,7 @@ export async function getAllChilds(pathString: string) {
       const raw = await fs.readFile(totalPath, "utf-8");
       return {
         ...justGetFrontmatterFromMD<BaseMdxFrontmatter>(raw),
-        href: `/docs${prevHref}${it.href}`,
+        href: `/library${prevHref}${it.href}`,
       };
     })
   );

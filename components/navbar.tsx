@@ -10,8 +10,8 @@ import AlgoliaSearch from "./algolia-search";
 
 export const NAVLINKS = [
   {
-    title: "Documentation",
-    href: `/docs${page_routes[0].href}`,
+    title: "Library",
+    href: `/library${page_routes[0].href}`,
   },
   {
     title: "Blog",
