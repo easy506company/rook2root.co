@@ -125,7 +125,7 @@ function sluggify(text: string) {
 }
 
 function getDocsContentPath(slug: string) {
-  return path.join(process.cwd(), "/contents/docs/", `${slug}/index.mdx`);
+  return path.join(process.cwd(), "/contents/library/", `${slug}/index.mdx`);
 }
 
 function justGetFrontmatterFromMD<Frontmatter>(rawMd: string): Frontmatter {
@@ -149,7 +149,7 @@ export async function getAllChilds(pathString: string) {
     page_routes_copy.map(async (it) => {
       const totalPath = path.join(
         process.cwd(),
-        "/contents/docs/",
+        "/contents/library/",
         prevHref,
         it.href,
         "index.mdx"
@@ -157,7 +157,7 @@ export async function getAllChilds(pathString: string) {
       const raw = await fs.readFile(totalPath, "utf-8");
       return {
         ...justGetFrontmatterFromMD<BaseMdxFrontmatter>(raw),
-        href: `/docs${prevHref}${it.href}`,
+        href: `/library${prevHref}${it.href}`,
       };
     })
   );
@@ -199,7 +199,7 @@ export type BlogMdxFrontmatter = BaseMdxFrontmatter & {
 
 export async function getAllBlogStaticPaths() {
   try {
-    const blogFolder = path.join(process.cwd(), "/contents/blogs/");
+    const blogFolder = path.join(process.cwd(), "/contents/articles/");
     const res = await fs.readdir(blogFolder);
     return res.map((file) => file.split(".")[0]);
   } catch (err) {
@@ -208,12 +208,12 @@ export async function getAllBlogStaticPaths() {
 }
 
 export async function getAllBlogsFrontmatter() {
-  const blogFolder = path.join(process.cwd(), "/contents/blogs/");
+  const blogFolder = path.join(process.cwd(), "/contents/articles/");
   const files = await fs.readdir(blogFolder);
   const uncheckedRes = await Promise.all(
     files.map(async (file) => {
       if (!file.endsWith(".mdx")) return undefined;
-      const filepath = path.join(process.cwd(), `/contents/blogs/${file}`);
+      const filepath = path.join(process.cwd(), `/contents/articles/${file}`);
       const rawMdx = await fs.readFile(filepath, "utf-8");
       return {
         ...justGetFrontmatterFromMD<BlogMdxFrontmatter>(rawMdx),
@@ -227,7 +227,7 @@ export async function getAllBlogsFrontmatter() {
 }
 
 export async function getCompiledBlogForSlug(slug: string) {
-  const blogFile = path.join(process.cwd(), "/contents/blogs/", `${slug}.mdx`);
+  const blogFile = path.join(process.cwd(), "/contents/articles/", `${slug}.mdx`);
   try {
     const rawMdx = await fs.readFile(blogFile, "utf-8");
     return await parseMdx<BlogMdxFrontmatter>(rawMdx);
@@ -237,7 +237,7 @@ export async function getCompiledBlogForSlug(slug: string) {
 }
 
 export async function getBlogFrontmatter(slug: string) {
-  const blogFile = path.join(process.cwd(), "/contents/blogs/", `${slug}.mdx`);
+  const blogFile = path.join(process.cwd(), "/contents/articles/", `${slug}.mdx`);
   try {
     const rawMdx = await fs.readFile(blogFile, "utf-8");
     return justGetFrontmatterFromMD<BlogMdxFrontmatter>(rawMdx);
