@@ -1,12 +1,12 @@
 import { ModeToggle } from "@/components/theme-toggle";
-import { GithubIcon, TwitterIcon, CommandIcon, TerminalIcon } from "lucide-react";
+import { TwitterIcon, TerminalIcon } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import Anchor from "./anchor";
 import { SheetLeftbar } from "./leftbar";
 import { page_routes } from "@/lib/routes-config";
 import { SheetClose } from "@/components/ui/sheet";
-import AlgoliaSearch from "./algolia-search";
+// import AlgoliaSearch from "./algolia-search";
 
 export const NAVLINKS = [
   {
@@ -23,11 +23,11 @@ export const NAVLINKS = [
   },
 ];
 
-const algolia_props = {
-  appId: process.env.ALGOLIA_APP_ID!,
-  indexName: process.env.ALGOLIA_INDEX!,
-  apiKey: process.env.ALGOLIA_SEARCH_API_KEY!,
-};
+// const algolia_props = {
+//   appId: process.env.ALGOLIA_APP_ID!,
+//   indexName: process.env.ALGOLIA_INDEX!,
+//   apiKey: process.env.ALGOLIA_SEARCH_API_KEY!,
+// };
 
 export function Navbar() {
   return (

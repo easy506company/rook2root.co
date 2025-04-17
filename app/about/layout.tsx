@@ -1,5 +1,3 @@
-import { Leftbar } from "@/components/leftbar";
-
 export default function AboutLayout({
     children,
 }: Readonly<{
