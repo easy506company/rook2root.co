@@ -20,6 +20,12 @@ git push
 
 ## Tips
 
+serve staticly built project:
+
+```bash
+npx serve out
+```
+
 Article meta example:
 
 ---
