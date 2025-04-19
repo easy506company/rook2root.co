@@ -1,5 +1,5 @@
-// import { buttonVariants } from "@/components/ui/button";
-// import { page_routes } from "@/lib/routes-config";
+import { page_routes } from "@/lib/routes-config";
+import { buttonVariants } from "@/components/ui/button";
 import { MoveUpRightIcon } from "lucide-react";
 import Link from "next/link";
 
@@ -20,14 +20,14 @@ export default function Home() {
       <p className="mb-8 md:text-lg text-base  max-w-[1200px] text-muted-foreground text-left sm:text-center">
         Explore dark ux patterns, growth exploits, and backend plays — documented, indexed, served cold.
       </p>
-      {/* <div className="sm:flex sm:flex-row grid grid-cols-2 items-center sm;gap-5 gap-3 mb-8">
+      <div className="sm:flex sm:flex-row grid grid-cols-2 items-center sm;gap-5 gap-3 mb-8">
         <Link
           href={`/library${page_routes[0].href}`}
-          className={buttonVariants({ className: "px-6", size: "lg" })}
+          className={buttonVariants({ variant: "default", className: "px-6", size: "lg" })}
         >
-          Get Stared
+          Enter Library
         </Link>
-        <Link
+        {/* <Link
           href="/articles"
           className={buttonVariants({
             variant: "secondary",
@@ -36,8 +36,8 @@ export default function Home() {
           })}
         >
           Read Blog
-        </Link>
-      </div> */}
+        </Link> */}
+      </div>
       {/* <span className="sm:flex hidden flex-row items-start sm:gap-2 gap-0.5 text-muted-foreground text-md mt-5 -mb-12 max-[800px]:mb-12 font-code sm:text-base text-sm font-medium">
         <TerminalSquareIcon className="w-5 h-5 sm:mr-1 mt-0.5" />
         {"npx create-aria-doc <project-directory>"}

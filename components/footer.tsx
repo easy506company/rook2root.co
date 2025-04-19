@@ -30,7 +30,7 @@ export function FooterButtons() {
         href="#"
         className={buttonVariants({ variant: "outline", size: "sm" })}
       >
-        <CoffeeIcon className="h-4 w-4 mr-2 text-purple-500 fill-current" />
+        <CoffeeIcon className="h-4 w-4 mr-2 text-neutral-50 fill-current" />
         Support
       </Link>
     </>
