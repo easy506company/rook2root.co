@@ -16,17 +16,16 @@ export const ROUTES: EachRoute[] = [
   {
     title: "User influence & retention engineering",
     href: "/user-influence-and-retention-engineering",
-    noLink: true,
     items: [
       {
         title: "Interface Control Strategies",
         href: "/interface-control-strategies",
         noLink: true,
         items: [
-          { title: "Deceptive UX patterns", href: "/deceptive-ux-patterns" },
-          { title: "Misleading subscription flows", href: "/misleading-subscription-flows" },
-          { title: "Friction-based churn suppression", href: "/friction-based-churn-suppression" },
-          { title: "Manipulative onboarding design", href: "/manipulative-onboarding-design" },
+          { title: "Misdirection", href: "/misdirection" },
+          { title: "Scarcity", href: "/scarcity" },
+          { title: "Urgency", href: "/urgency" },
+          { title: "Sneaking", href: "/sneaking" },
         ],
       },
       {
@@ -35,9 +34,10 @@ export const ROUTES: EachRoute[] = [
         href: "/retention-and-lock-in-tactics",
         items: [
           { title: "Vendor lock-in mechanics", href: "/vendor-lock-in-mechanics" },
-          { title: "Forced continuity models", href: "/forced-continuity-models" },
-          { title: "Perceived value inflation", href: "/perceived-value-inflation" },
-          { title: "Behavioral friction for exits", href: "/behavioral-friction-for-exits" },
+          { title: "Forced action", href: "/forced-action" },
+          { title: "Friction based churn", href: "/friction-based-churn-suppression" },
+          { title: "Obstruction", href: "/obstruction" },
+          { title: "Hidden subscription", href: "/hidden-subscription" },
         ],
       },
       {
