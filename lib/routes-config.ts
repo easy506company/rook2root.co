@@ -111,7 +111,6 @@ export const ROUTES: EachRoute[] = [
           { title: "Character assassination", href: "/character-assassination" },
           { title: "Black propaganda", href: "/black-propaganda" },
           { title: "Black PR", href: "/black-pr" },
-          { title: "information warfare", href: "/information-warfare" }
         ]
       }
     ]
