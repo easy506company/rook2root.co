@@ -53,7 +53,7 @@ export const ROUTES: EachRoute[] = [
       },
     ],
   },
-    {
+  {
     title: "Exploitative Growth & Platform Abuse",
     href: "/exploitative-growth-and-platform-abuse",
     items: [
@@ -107,7 +107,6 @@ export const ROUTES: EachRoute[] = [
         items: [
           { title: "Fake news", href: "/fake-news" },
           { title: "Disinformation", href: "/disinformation" },
-          { title: "Internet manipulation", href: "/internet-manipulation" },
           { title: "Kompromat", href: "/kompromat" },
           { title: "Character assassination", href: "/character-assassination" },
           { title: "Black propaganda", href: "/black-propaganda" },
@@ -165,7 +164,7 @@ export const ROUTES: EachRoute[] = [
       }
     ]
   },
-    {
+  {
     title: "Surveillance, Espionage & Sabotage",
     href: "/surveillance-espionage-and-sabotage",
     items: [
@@ -174,7 +173,6 @@ export const ROUTES: EachRoute[] = [
         href: "/corporate-espionage",
         noLink: true,
         items: [
-          { title: "Corporate espionage cases", href: "/corporate-espionage-cases" },
           { title: "Reverse engineering", href: "/reverse-engineering" },
           { title: "Data leaks", href: "/data-leaks" },
           { title: "Internal mole usage", href: "/internal-mole-usage" }
@@ -189,7 +187,6 @@ export const ROUTES: EachRoute[] = [
           { title: "Competitive ad bidding", href: "/competitive-ad-bidding" },
           { title: "Supply chain lockouts", href: "/supply-chain-lockouts" },
           { title: "Reputation sabotage", href: "/reputation-sabotage" },
-          { title: "External-facing manipulation", href: "/external-facing-manipulation" }
         ]
       }
     ]
