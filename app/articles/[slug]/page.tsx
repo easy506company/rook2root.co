@@ -11,7 +11,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { formatDate } from "@/lib/utils";
-// import Image from "next/image";
+import Image from "next/image";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -57,7 +57,7 @@ export default async function BlogPage(props: PageProps) {
         <p className="text-muted-foreground text-sm">
           {formatDate(res.frontmatter.date)}
         </p>
-        <h1 className="sm:text-3xl text-2xl font-extrabold">
+        <h1 className="sm:text-4xl text-2xl font-extrabold">
           {res.frontmatter.title}
         </h1>
         <div className="mt-6 flex flex-col gap-3">
@@ -67,13 +67,13 @@ export default async function BlogPage(props: PageProps) {
       </div>
       <div className="!w-full">
         <div className="w-full mb-7">
-          {/* <Image
+          <Image
             src={res.frontmatter.cover}
             alt="cover"
-            width={700}
-            height={400}
-            className="w-full h-[400px] rounded-md border object-cover"
-          /> */}
+            width={700} // 74
+            height={300}
+            className="w-full h-[300px] rounded-md border object-cover"
+          />
         </div>
         <Typography>{res.content}</Typography>
       </div>

@@ -24,7 +24,7 @@ export default async function BlogIndexPage() {
          Articles archive
         </h1>
         <p className="text-muted-foreground sm:text-[16.5px] text-[14.5px]">
-          What we’ve documented lately — no spin.
+          What we’ve covered lately — no spin.
         </p>
       </div>
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-8 gap-4 mb-5">
@@ -49,7 +49,7 @@ function BlogCard({
       href={`/articles/${slug}`}
       className="flex flex-col gap-2 items-start border rounded-md py-5 px-3 min-h-[400px]"
     >
-      <h3 className="text-md font-semibold -mt-1 pr-7">{title}</h3>
+      <h3 className="text-3xl font-semibold -mt-1 pr-7">{title}</h3>
       {/* <div className="w-full">
         <Image
           src={cover}
