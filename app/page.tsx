@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="flex sm:min-h-[87.5vh] min-h-[82vh] flex-col sm:items-center justify-center text-center sm:py-8 py-14">
       <Link
-        href="https://x.com/rook2root"
+        href="https://x.com/darkpatterns"
         target="_blank"
         className="mb-5 sm:text-lg flex items-center gap-2 underline underline-offset-4 sm:-mt-12"
       >
