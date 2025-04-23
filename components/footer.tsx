@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
-import { CoffeeIcon } from "lucide-react";
+// import { CoffeeIcon } from "lucide-react";
+import { MailWarningIcon } from "lucide-react";
 
 export function Footer() {
   return (
@@ -27,11 +28,11 @@ export function FooterButtons() {
   return (
     <>
       <Link
-        href="#"
+        href="https://rook2root.beehiiv.com/subscribe"
         className={buttonVariants({ variant: "outline", size: "sm" })}
       >
-        <CoffeeIcon className="h-4 w-4 mr-2 text-neutral-50 fill-current" />
-        Support
+        <MailWarningIcon className="h-4 w-4 mr-2 text-red-600" />
+        Subscribe
       </Link>
     </>
   );
