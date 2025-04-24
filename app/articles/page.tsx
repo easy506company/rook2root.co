@@ -49,7 +49,7 @@ function BlogCard({
       href={`/articles/${slug}`}
       className="flex flex-col gap-2 items-start border rounded-md py-5 px-3 min-h-[400px]"
     >
-      <h3 className="text-3xl font-semibold -mt-1 pr-7">{title}</h3>
+      <h3 className="text-2xl font-semibold -mt-1 pr-7 text-pretty">{title}</h3>
       {/* <div className="w-full">
         <Image
           src={cover}

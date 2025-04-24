@@ -24,7 +24,7 @@ export default function SubLink({
   const [isOpen, setIsOpen] = useState(level == 0);
 
   useEffect(() => {
-    if (path == href || path.includes(href)) setIsOpen(true);
+    if (path && (path == href || path.includes(href))) setIsOpen(true);
   }, [href, path]);
 
   const Comp = (
