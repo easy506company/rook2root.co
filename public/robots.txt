@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://rook2root.co
+
+# Sitemaps
+Sitemap: https://rook2root.co/sitemap.xml
