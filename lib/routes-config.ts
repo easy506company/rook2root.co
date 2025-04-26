@@ -61,8 +61,9 @@ export const ROUTES: EachRoute[] = [
         title: "Black/Grey Hat Growth Hacking",
         href: "/black-grey-hat-growth-hacking",
         noLink: true,
+        tag: "New",
         items: [
-          { title: "Black hat marketing", href: "/black-hat-marketing" },
+          { title: "Black hat marketing", href: "/black-hat-marketing", tag: "●" },
           { title: "Grey hat growth hacking", href: "/grey-hat-growth-hacking" },
           { title: "Artificial scarcity", href: "/artificial-scarcity" },
           { title: "Weaponized pricing models", href: "/weaponized-pricing-models" },

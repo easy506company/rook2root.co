@@ -20,6 +20,7 @@ import Image from "@/components/markdown/image";
 import Link from "@/components/markdown/link";
 import Outlet from "@/components/markdown/outlet";
 import Files from "@/components/markdown/files";
+import Card from "@/components/markdown/card";
 import {
   Table,
   TableBody,
@@ -31,6 +32,7 @@ import {
 
 // add custom components
 const components = {
+  Card,
   Tabs,
   TabsContent,
   TabsList,
@@ -292,4 +294,56 @@ function rehypeCodeTitlesWithLogo() {
       }
     });
   };
+}
+
+// strategies
+
+async function getAllMdxFiles(dir: string, base = ""): Promise<string[]> {
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+  const files = await Promise.all(
+    entries.map(async (entry) => {
+      const res = path.join(dir, entry.name);
+      const rel = path.join(base, entry.name);
+      if (entry.isDirectory()) {
+        return getAllMdxFiles(res, rel);
+      } else if (entry.isFile() && entry.name.endsWith(".mdx")) {
+        return [rel.replace(/\.mdx$/, "")];
+      }
+      return [];
+    })
+  );
+  return files.flat();
+}
+
+export async function getAllStrategiesFrontmatter() {
+  const strategiesFolder = path.join(process.cwd(), "/contents/strategies/");
+  const slugs = await getAllMdxFiles(strategiesFolder);
+  const uncheckedRes = await Promise.all(
+    slugs.map(async (slug) => {
+      const filepath = path.join(strategiesFolder, `${slug}.mdx`);
+      const rawMdx = await fs.readFile(filepath, "utf-8");
+      return {
+        ...justGetFrontmatterFromMD<BaseMdxFrontmatter>(rawMdx),
+        slug,
+      };
+    })
+  );
+  return uncheckedRes.filter((it) => !!it) as (BaseMdxFrontmatter & {
+    slug: string;
+  })[];
+}
+
+export async function getCompiledStrategyForSlug(slug: string | string[]) {
+  const slugArr = Array.isArray(slug) ? slug : [slug];
+  const strategyFile = path.join(
+    process.cwd(),
+    "/contents/strategies/",
+    ...slugArr
+  ) + ".mdx";
+  try {
+    const rawMdx = await fs.readFile(strategyFile, "utf-8");
+    return await parseMdx<BaseMdxFrontmatter>(rawMdx);
+  } catch {
+    return undefined;
+  }
 }
