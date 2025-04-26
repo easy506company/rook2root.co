@@ -1,9 +1,13 @@
 import { notFound } from "next/navigation";
 import { getCompiledStrategyForSlug, getAllStrategiesFrontmatter } from "@/lib/markdown"; 
 import { Typography } from "@/components/typography";
+import { GoBackButton } from "@/components/go-back-button";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 type PageProps = {
-  params: { slug: string[] };
+  params: Promise<{ slug: string[] }>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  searchParams?: Promise<any>;
 };
 
 export async function generateStaticParams() {
@@ -15,12 +19,15 @@ export async function generateStaticParams() {
 }
 
 export default async function StrategyPage({ params }: PageProps) {
-  const slug = params.slug;
+  const { slug } = await params;
+
   const res = await getCompiledStrategyForSlug(slug);
   if (!res) notFound();
 
   return (
     <div className="lg:w-[60%] sm:[95%] md:[75%] mx-auto">
+      <ScrollToTop />
+      <GoBackButton />
       <h1 className="sm:text-4xl text-2xl font-extrabold mb-2">
         {res.frontmatter.title}
       </h1>

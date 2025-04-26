@@ -6,13 +6,16 @@ import { notFound } from "next/navigation";
 import { getCompiledDocsForSlug, getDocFrontmatter } from "@/lib/markdown";
 import { Typography } from "@/components/typography";
 
+
 type PageProps = {
   params: Promise<{ slug: string[] }>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  searchParams?: Promise<any>;
 };
 
-export default async function DocsPage(props: PageProps) {
-  const params = await props.params;
-  const { slug = [] } = params;
+
+export default async function DocsPage({ params }: PageProps) {
+  const { slug = [] } = await params;
 
   const pathName = slug.join("/");
   const res = await getCompiledDocsForSlug(pathName);
@@ -41,9 +44,8 @@ export default async function DocsPage(props: PageProps) {
   );
 }
 
-export async function generateMetadata(props: PageProps) {
-  const params = await props.params;
-  const { slug = [] } = params;
+export async function generateMetadata({ params }: PageProps) {
+  const { slug = [] } = await params;
 
   const pathName = slug.join("/");
   const res = await getDocFrontmatter(pathName);

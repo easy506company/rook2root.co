@@ -38,10 +38,17 @@ export default function Home() {
           Read Articles
         </Link>
       </div>
-      {/* <span className="sm:flex hidden flex-row items-start sm:gap-2 gap-0.5 text-muted-foreground text-md mt-5 -mb-12 max-[800px]:mb-12 font-code sm:text-base text-sm font-medium">
-        <TerminalSquareIcon className="w-5 h-5 sm:mr-1 mt-0.5" />
-        {"npx create-aria-doc <project-directory>"}
-      </span> */}
+      <span className="flex flex-col items-start text-left text-muted-foreground text-sm mt-5 -mb-12 max-[800px]:mb-12">
+        <span className="font-semibold mb-2">
+          v{process.env.APP_VERSION} what&apos;s new:
+        </span>
+        <Link href="/library/exploitative-growth-and-platform-abuse/black-grey-hat-growth-hacking/black-hat-marketing" className="hover:underline">
+          - Updated black-hat marketing strategies with detailed breakdowns
+        </Link>
+        <Link href="/articles/20250505-zucker" className="hover:underline">
+          - New article released
+        </Link>
+      </span>
     </div>
   );
 }

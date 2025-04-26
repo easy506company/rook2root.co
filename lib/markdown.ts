@@ -200,15 +200,17 @@ export type BlogMdxFrontmatter = BaseMdxFrontmatter & {
   cover: string;
 };
 
-export async function getAllBlogStaticPaths() {
+export async function getAllBlogStaticPaths(): Promise<string[]> {
   try {
     const blogFolder = path.join(process.cwd(), "/contents/articles/");
     const res = await fs.readdir(blogFolder);
     return res.map((file) => file.split(".")[0]);
   } catch (err) {
     console.log(err);
+    return [];
   }
 }
+
 
 export async function getAllBlogsFrontmatter() {
   const blogFolder = path.join(process.cwd(), "/contents/articles/");
@@ -318,6 +320,8 @@ async function getAllMdxFiles(dir: string, base = ""): Promise<string[]> {
 export async function getAllStrategiesFrontmatter() {
   const strategiesFolder = path.join(process.cwd(), "/contents/strategies/");
   const slugs = await getAllMdxFiles(strategiesFolder);
+  console.log("All slugs found:", slugs);
+
   const uncheckedRes = await Promise.all(
     slugs.map(async (slug) => {
       const filepath = path.join(strategiesFolder, `${slug}.mdx`);
@@ -333,17 +337,24 @@ export async function getAllStrategiesFrontmatter() {
   })[];
 }
 
-export async function getCompiledStrategyForSlug(slug: string | string[]) {
+export async function getCompiledStrategyForSlug(slug: string | string[] | undefined) {
+  if (!slug || (Array.isArray(slug) && slug.length === 0)) {
+    return undefined;
+  }
+
   const slugArr = Array.isArray(slug) ? slug : [slug];
   const strategyFile = path.join(
     process.cwd(),
     "/contents/strategies/",
     ...slugArr
   ) + ".mdx";
+
   try {
     const rawMdx = await fs.readFile(strategyFile, "utf-8");
     return await parseMdx<BaseMdxFrontmatter>(rawMdx);
-  } catch {
+  } catch (err) {
+    console.error("Failed to compile strategy for slug:", slugArr.join("/"), err);
     return undefined;
   }
 }
+
