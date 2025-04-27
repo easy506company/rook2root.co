@@ -32,10 +32,11 @@ export const ROUTES: EachRoute[] = [
         title: "Retention & Lock-in Tactics",
         noLink: true,
         href: "/retention-and-lock-in-tactics",
+        tag: "New",
         items: [
           { title: "Vendor lock-in mechanics", href: "/vendor-lock-in-mechanics" },
           { title: "Forced action", href: "/forced-action" },
-          { title: "Friction based churn suppression", href: "/friction-based-churn-suppression" },
+          { title: "Friction based churn suppression", href: "/friction-based-churn-suppression", tag: "●" },
           { title: "Obstruction", href: "/obstruction" },
           { title: "Hidden subscription", href: "/hidden-subscription" },
         ],

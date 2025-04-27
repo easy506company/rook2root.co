@@ -18,7 +18,7 @@ export default function Home() {
         rook2root
       </h1>
       <p className="mb-8 md:text-lg text-base  max-w-[1200px] text-muted-foreground text-left sm:text-center">
-        Explore dark ux patterns, growth exploits, and backend plays — documented, indexed, served cold.
+        Explore deceptive ux patterns, growth exploits, and backend plays — documented, indexed, served cold.
       </p>
       <div className="sm:flex sm:flex-row grid grid-cols-2 items-center sm;gap-5 gap-3 mb-8">
         <Link
@@ -42,11 +42,12 @@ export default function Home() {
         <span className="font-semibold mb-2">
           v{process.env.APP_VERSION} what&apos;s new:
         </span>
+        <span className="text-sm text-muted-foreground">detailed breakdown of:</span>
         <Link href="/library/exploitative-growth-and-platform-abuse/black-grey-hat-growth-hacking/black-hat-marketing" className="hover:underline">
-          - Updated black-hat marketing strategies with detailed breakdowns
+          - social proof manipulation
         </Link>
-        <Link href="/articles/20250505-zucker" className="hover:underline">
-          - New article released
+        <Link href="/library/user-influence-and-retention-engineering/retention-and-lock-in-tactics/friction-based-churn-suppression" className="hover:underline">
+          - multi-step cancellation flows
         </Link>
       </span>
     </div>

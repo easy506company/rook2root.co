@@ -320,7 +320,6 @@ async function getAllMdxFiles(dir: string, base = ""): Promise<string[]> {
 export async function getAllStrategiesFrontmatter() {
   const strategiesFolder = path.join(process.cwd(), "/contents/strategies/");
   const slugs = await getAllMdxFiles(strategiesFolder);
-  console.log("All slugs found:", slugs);
 
   const uncheckedRes = await Promise.all(
     slugs.map(async (slug) => {
