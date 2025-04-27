@@ -94,10 +94,16 @@ export async function getCompiledDocsForSlug(slug: string) {
   }
 }
 
-export async function getDocsTocs(slug: string) {
-  const contentPath = getDocsContentPath(slug);
+export async function getTocs(slug: string, baseFolder: "library" | "strategies") {
+  let contentPath;
+  if (baseFolder === "library") {
+    contentPath = path.join(process.cwd(), `/contents/library/`, `${slug}/index.mdx`);
+  } else {
+    // For strategies, the file is flat: /contents/strategies/[slug].mdx
+    contentPath = path.join(process.cwd(), `/contents/strategies/`, `${slug}.mdx`);
+  }
+
   const rawMdx = await fs.readFile(contentPath, "utf-8");
-  // captures between ## - #### can modify accordingly
   const headingsRegex = /^(#{2,4})\s(.+)$/gm;
   let match;
   const extractedHeadings = [];

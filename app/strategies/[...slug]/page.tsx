@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
-import { getCompiledStrategyForSlug, getAllStrategiesFrontmatter } from "@/lib/markdown"; 
+import { getCompiledStrategyForSlug, getAllStrategiesFrontmatter } from "@/lib/markdown";
 import { Typography } from "@/components/typography";
 import { GoBackButton } from "@/components/go-back-button";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import Toc from "@/components/toc";
 
 type PageProps = {
   params: Promise<{ slug: string[] }>;
@@ -20,25 +21,36 @@ export async function generateStaticParams() {
 
 export default async function StrategyPage({ params }: PageProps) {
   const { slug } = await params;
-
   const res = await getCompiledStrategyForSlug(slug);
   if (!res) notFound();
 
+  const pathName = Array.isArray(slug) ? slug.join("/") : slug;
+
   return (
-    <div className="lg:w-[60%] sm:[95%] md:[75%] mx-auto">
-      <ScrollToTop />
-      <GoBackButton />
-      <h1 className="sm:text-4xl text-2xl font-extrabold mb-2">
-        {res.frontmatter.title}
-      </h1>
-      <p className="text-sm text-muted-foreground mb-4">
-        {res.frontmatter.description}
-      </p>
-      <Typography>
-        <div className="text-[1.075rem] leading-7">
-          {res.content}
+    <div className="container mx-auto flex gap-6 px-2 sm:gap-10 sm:px-4">
+      {/* Main content */}
+      <div className="w-full max-w-3xl py-6 sm:py-10 mr-auto">
+        <ScrollToTop />
+        <GoBackButton />
+        <h1 className="sm:text-4xl text-2xl font-extrabold mb-2">
+          {res.frontmatter.title}
+        </h1>
+        <p className="text-sm text-muted-foreground mb-6">
+          {res.frontmatter.description}
+        </p>
+        <Typography>
+          <div className="text-[1.075rem] leading-7">
+            {res.content}
+          </div>
+        </Typography>
+      </div>
+
+      {/* Sticky ToC */}
+      <aside className="hidden xl:block w-64">
+        <div className="sticky top-24">
+          <Toc path={pathName} baseFolder="strategies" />
         </div>
-      </Typography>
+      </aside>
     </div>
   );
 }

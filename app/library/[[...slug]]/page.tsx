@@ -39,7 +39,7 @@ export default async function DocsPage({ params }: PageProps) {
         </div>
       </div>
 
-      <Toc path={pathName} />
+      <Toc path={pathName} baseFolder="library" />
     </div>
   );
 }
