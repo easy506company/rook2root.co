@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
     APP_VERSION: version,
   },
   output: "export",
+  typescript: {
+    // ignoreBuildErrors: true,
+  },
   images: {
     unoptimized: true,
     // remotePatterns: [

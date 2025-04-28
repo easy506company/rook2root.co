@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   title: "rook2root - Business is Business",
   metadataBase: new URL("https://rook2root.co/"),
   description:
-    "Explore competitive strategy, growth exploits, and backend plays — documented, indexed, and served cold. rook2root captures the mechanics of real-world business.",
+    "Explore competitive strategy, growth tactics, and backend plays — documented, indexed, and served cold. rook2root captures the mechanics of real-world business.",
 };
 
 export default function RootLayout({
@@ -40,6 +40,12 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
       </head>
+      {/* ahref */}
+      <script
+        src="https://analytics.ahrefs.com/analytics.js"
+        data-key="YAjvqgr4lfkoZcepEZAcrQ"
+        async>
+      </script>
       <body
         className={`${sansFont.variable} ${monoFont.variable} font-regular antialiased tracking-wide`}
         suppressHydrationWarning

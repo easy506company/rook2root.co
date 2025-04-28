@@ -20,6 +20,7 @@ import Image from "@/components/markdown/image";
 import Link from "@/components/markdown/link";
 import Outlet from "@/components/markdown/outlet";
 import Files from "@/components/markdown/files";
+import Card from "@/components/markdown/card";
 import {
   Table,
   TableBody,
@@ -31,6 +32,7 @@ import {
 
 // add custom components
 const components = {
+  Card,
   Tabs,
   TabsContent,
   TabsList,
@@ -92,10 +94,16 @@ export async function getCompiledDocsForSlug(slug: string) {
   }
 }
 
-export async function getDocsTocs(slug: string) {
-  const contentPath = getDocsContentPath(slug);
+export async function getTocs(slug: string, baseFolder: "library" | "strategies") {
+  let contentPath;
+  if (baseFolder === "library") {
+    contentPath = path.join(process.cwd(), `/contents/library/`, `${slug}/index.mdx`);
+  } else {
+    // For strategies, the file is flat: /contents/strategies/[slug].mdx
+    contentPath = path.join(process.cwd(), `/contents/strategies/`, `${slug}.mdx`);
+  }
+
   const rawMdx = await fs.readFile(contentPath, "utf-8");
-  // captures between ## - #### can modify accordingly
   const headingsRegex = /^(#{2,4})\s(.+)$/gm;
   let match;
   const extractedHeadings = [];
@@ -198,15 +206,17 @@ export type BlogMdxFrontmatter = BaseMdxFrontmatter & {
   cover: string;
 };
 
-export async function getAllBlogStaticPaths() {
+export async function getAllBlogStaticPaths(): Promise<string[]> {
   try {
     const blogFolder = path.join(process.cwd(), "/contents/articles/");
     const res = await fs.readdir(blogFolder);
     return res.map((file) => file.split(".")[0]);
   } catch (err) {
     console.log(err);
+    return [];
   }
 }
+
 
 export async function getAllBlogsFrontmatter() {
   const blogFolder = path.join(process.cwd(), "/contents/articles/");
@@ -293,3 +303,67 @@ function rehypeCodeTitlesWithLogo() {
     });
   };
 }
+
+// strategies
+
+export type ArticleMdxFrontmatter = BaseMdxFrontmatter & {
+  cover: string;
+};
+
+async function getAllMdxFiles(dir: string, base = ""): Promise<string[]> {
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+  const files = await Promise.all(
+    entries.map(async (entry) => {
+      const res = path.join(dir, entry.name);
+      const rel = path.join(base, entry.name);
+      if (entry.isDirectory()) {
+        return getAllMdxFiles(res, rel);
+      } else if (entry.isFile() && entry.name.endsWith(".mdx")) {
+        return [rel.replace(/\.mdx$/, "")];
+      }
+      return [];
+    })
+  );
+  return files.flat();
+}
+
+export async function getAllStrategiesFrontmatter() {
+  const strategiesFolder = path.join(process.cwd(), "/contents/strategies/");
+  const slugs = await getAllMdxFiles(strategiesFolder);
+
+  const uncheckedRes = await Promise.all(
+    slugs.map(async (slug) => {
+      const filepath = path.join(strategiesFolder, `${slug}.mdx`);
+      const rawMdx = await fs.readFile(filepath, "utf-8");
+      return {
+        ...justGetFrontmatterFromMD<ArticleMdxFrontmatter>(rawMdx),
+        slug,
+      };
+    })
+  );
+  return uncheckedRes.filter((it) => !!it) as (ArticleMdxFrontmatter & {
+    slug: string;
+  })[];
+}
+
+export async function getCompiledStrategyForSlug(slug: string | string[] | undefined) {
+  if (!slug || (Array.isArray(slug) && slug.length === 0)) {
+    return undefined;
+  }
+
+  const slugArr = Array.isArray(slug) ? slug : [slug];
+  const strategyFile = path.join(
+    process.cwd(),
+    "/contents/strategies/",
+    ...slugArr
+  ) + ".mdx";
+
+  try {
+    const rawMdx = await fs.readFile(strategyFile, "utf-8");
+    return await parseMdx<ArticleMdxFrontmatter>(rawMdx);
+  } catch (err) {
+    console.error("Failed to compile strategy for slug:", slugArr.join("/"), err);
+    return undefined;
+  }
+}
+

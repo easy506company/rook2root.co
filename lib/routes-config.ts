@@ -32,10 +32,11 @@ export const ROUTES: EachRoute[] = [
         title: "Retention & Lock-in Tactics",
         noLink: true,
         href: "/retention-and-lock-in-tactics",
+        tag: "New",
         items: [
           { title: "Vendor lock-in mechanics", href: "/vendor-lock-in-mechanics" },
           { title: "Forced action", href: "/forced-action" },
-          { title: "Friction based churn suppression", href: "/friction-based-churn-suppression" },
+          { title: "Friction based churn suppression", href: "/friction-based-churn-suppression", tag: "●" },
           { title: "Obstruction", href: "/obstruction" },
           { title: "Hidden subscription", href: "/hidden-subscription" },
         ],
@@ -61,8 +62,9 @@ export const ROUTES: EachRoute[] = [
         title: "Black/Grey Hat Growth Hacking",
         href: "/black-grey-hat-growth-hacking",
         noLink: true,
+        tag: "New",
         items: [
-          { title: "Black hat marketing", href: "/black-hat-marketing" },
+          { title: "Black hat marketing", href: "/black-hat-marketing", tag: "●" },
           { title: "Grey hat growth hacking", href: "/grey-hat-growth-hacking" },
           { title: "Artificial scarcity", href: "/artificial-scarcity" },
           { title: "Weaponized pricing models", href: "/weaponized-pricing-models" },

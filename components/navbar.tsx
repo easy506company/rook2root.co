@@ -14,7 +14,7 @@ export const NAVLINKS = [
     href: "/articles",
   },
   {
-    title: "Library",
+    title: "Exploits Library",
     href: `/library${page_routes[0].href}`,
   },
   {
