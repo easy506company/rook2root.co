@@ -25,7 +25,7 @@ export default function About() {
                 </p>
                 <div className="mt-8 flex flex-col items-center gap-2">
                     <span className="text-base text-muted-foreground font-medium text-md">
-                        Get our latest insights straight to your inbox.
+                        Get our latest insights straight to your inbox:
                     </span>
                     <Button asChild variant="ghost" size="lg">
                         <Link href="https://rook2root.beehiiv.com/subscribe">
