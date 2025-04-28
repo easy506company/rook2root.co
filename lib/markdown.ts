@@ -77,11 +77,12 @@ async function parseMdx<Frontmatter>(rawMdx: string) {
   });
 }
 
-// logic for docs
+// logic for library
 
 export type BaseMdxFrontmatter = {
   title: string;
   description: string;
+  metaDescription: string;
 };
 
 export async function getCompiledDocsForSlug(slug: string) {

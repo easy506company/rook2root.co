@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   title: "rook2root - Business is Business",
   metadataBase: new URL("https://rook2root.co/"),
   description:
-    "Explore competitive strategy, growth tactics, and backend plays — documented, indexed, and served cold. rook2root captures the mechanics of real-world business.",
+    "Explore competitive strategy, growth tactics, and backend plays — documented, indexed, served cold. rook2root captures real-world business moves.",
 };
 
 export default function RootLayout({
