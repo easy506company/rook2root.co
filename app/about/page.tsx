@@ -16,7 +16,7 @@ export default function About() {
                 <p className="mt-4 mb-4">
                     Want to tip us off or collaborate?{' '}
                 </p>
-                <p>email: admin@rook2root.co</p>
+                <a href="mailto:admin@rook2root.co">admin@rook2root.co</a>
                 <p>
                     x:{' '}
                     <Link href="https://x.com/darkpatterns" target="_blank" rel="noopener noreferrer">
