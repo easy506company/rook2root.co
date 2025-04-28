@@ -49,10 +49,17 @@ export async function generateMetadata({ params }: PageProps) {
   const pathName = slug.join("/");
   const res = await getDocFrontmatter(pathName);
   if (!res) return {};
+
   const { title, metaDescription } = res;
+
+  const canonicalUrl = `https://rook2root.co/${pathName}`;
+
   return {
     title,
     description: metaDescription, // Use metaDescription for SEO
+    alternates: {
+      canonical: canonicalUrl,
+    },
   };
 }
 
