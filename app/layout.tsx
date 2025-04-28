@@ -40,6 +40,12 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
       </head>
+      {/* ahref */}
+      <script
+        src="https://analytics.ahrefs.com/analytics.js"
+        data-key="YAjvqgr4lfkoZcepEZAcrQ"
+        async>
+      </script>
       <body
         className={`${sansFont.variable} ${monoFont.variable} font-regular antialiased tracking-wide`}
         suppressHydrationWarning

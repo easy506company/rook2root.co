@@ -47,7 +47,7 @@ export default function Home() {
           - social proof manipulation
         </Link>
         <Link href="/library/user-influence-and-retention-engineering/retention-and-lock-in-tactics/friction-based-churn-suppression" className="hover:underline">
-          - multi-step cancellation flows
+          - dec. pattern: multi-step cancellation flows
         </Link>
       </span>
     </div>

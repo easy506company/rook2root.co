@@ -1,3 +1,4 @@
+import Image from "@/components/markdown/image";
 import { notFound } from "next/navigation";
 import { getCompiledStrategyForSlug, getAllStrategiesFrontmatter } from "@/lib/markdown";
 import { Typography } from "@/components/typography";
@@ -38,6 +39,18 @@ export default async function StrategyPage({ params }: PageProps) {
         <p className="text-sm text-muted-foreground mb-6">
           {res.frontmatter.description}
         </p>
+        {/* Cover image */}
+        {res.frontmatter.cover && (
+          <div className="w-full mb-7">
+            <Image
+              src={res.frontmatter.cover}
+              alt="cover"
+              width={700}
+              height={300}
+              className="w-full h-[300px] rounded-md border object-cover"
+            />
+          </div>
+        )}
         <Typography>
           <div className="text-[1.075rem] leading-7">
             {res.content}

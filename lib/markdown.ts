@@ -306,6 +306,10 @@ function rehypeCodeTitlesWithLogo() {
 
 // strategies
 
+export type ArticleMdxFrontmatter = BaseMdxFrontmatter & {
+  cover: string;
+};
+
 async function getAllMdxFiles(dir: string, base = ""): Promise<string[]> {
   const entries = await fs.readdir(dir, { withFileTypes: true });
   const files = await Promise.all(
@@ -332,12 +336,12 @@ export async function getAllStrategiesFrontmatter() {
       const filepath = path.join(strategiesFolder, `${slug}.mdx`);
       const rawMdx = await fs.readFile(filepath, "utf-8");
       return {
-        ...justGetFrontmatterFromMD<BaseMdxFrontmatter>(rawMdx),
+        ...justGetFrontmatterFromMD<ArticleMdxFrontmatter>(rawMdx),
         slug,
       };
     })
   );
-  return uncheckedRes.filter((it) => !!it) as (BaseMdxFrontmatter & {
+  return uncheckedRes.filter((it) => !!it) as (ArticleMdxFrontmatter & {
     slug: string;
   })[];
 }
@@ -356,7 +360,7 @@ export async function getCompiledStrategyForSlug(slug: string | string[] | undef
 
   try {
     const rawMdx = await fs.readFile(strategyFile, "utf-8");
-    return await parseMdx<BaseMdxFrontmatter>(rawMdx);
+    return await parseMdx<ArticleMdxFrontmatter>(rawMdx);
   } catch (err) {
     console.error("Failed to compile strategy for slug:", slugArr.join("/"), err);
     return undefined;
