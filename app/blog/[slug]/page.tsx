@@ -15,7 +15,7 @@ import Image from "next/image";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const res = await getInsightsFrontmatter(slug, "articles");
+  const res = await getInsightsFrontmatter(slug, "blog");
   if (!res) return {};
   const { title, description } = res;
   return { title, description };
@@ -23,20 +23,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 
 export async function generateStaticParams() {
-  const val = await getAllInsightsStaticPaths('articles');
+  const val = await getAllInsightsStaticPaths('blog');
   return (val ?? []).map((it) => ({ slug: it }));
 }
 
 export default async function BlogPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const res = await getCompiledInsightsForSlug(slug, "articles");
+  const res = await getCompiledInsightsForSlug(slug, "blog");
   if (!res) notFound();
 
   return (
     <div className="lg:w-[60%] sm:[95%] md:[75%] mx-auto">
       <Link
         className={buttonVariants({ variant: "link", className: "!mx-0 !px-0 mb-7 !-ml-1" })}
-        href="/articles"
+        href="/blog"
       >
         <ArrowLeftIcon className="w-4 h-4 mr-1.5" /> Back to archive
       </Link>

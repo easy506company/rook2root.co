@@ -1,14 +1,10 @@
 // for page navigation & to sort on leftbar
 
-export type EachRoute = {
-  title: string;
-  href: string;
-  noLink?: true; // noLink will create a route segment (section) but cannot be navigated
-  items?: EachRoute[];
-  tag?: string;
-};
+import { type EachRoute } from "@/types/eachRoute";
 
-export const ROUTES: EachRoute[] = [
+
+
+export const LIBRARY_ROUTES: EachRoute[] = [
   {
     title: "Introduction",
     href: "/introduction",
@@ -241,4 +237,4 @@ function getRecurrsiveAllLinks(node: EachRoute) {
   return ans;
 }
 
-export const page_routes = ROUTES.map((it) => getRecurrsiveAllLinks(it)).flat();
+export const library_routes = LIBRARY_ROUTES.map((it) => getRecurrsiveAllLinks(it)).flat();

@@ -1,4 +1,4 @@
-import { page_routes } from "@/lib/routes-config";
+import { library_routes } from "@/lib/library-routes-config";
 import { buttonVariants } from "@/components/ui/button";
 import { MoveUpRightIcon } from "lucide-react";
 import Link from "next/link";
@@ -22,7 +22,7 @@ export default function Home() {
       </p>
       <div className="sm:flex sm:flex-row grid grid-cols-2 items-center sm;gap-5 gap-3 mb-8">
         <Link
-          href={`/library${page_routes[0].href}`}
+          href={`/library${library_routes[0].href}`}
           className={buttonVariants({ variant: "default", className: "px-6", size: "lg" })}
         >
           Enter Library
