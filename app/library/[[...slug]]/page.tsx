@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: PageProps) {
 
   const { title, metaDescription } = res;
 
-  const canonicalUrl = `https://rook2root.co/${pathName}`;
+  const canonicalUrl = `https://rook2root.co/library/${pathName}`;
 
   return {
     title,

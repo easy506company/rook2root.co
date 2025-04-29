@@ -15,9 +15,7 @@ export default function About() {
                 <p>Not to preach, but to illuminate.</p>
                 <p className="mt-4 mb-4">
                     Want to tip us off or collaborate?{' '}
-                </p>
-                <a href="mailto:admin@rook2root.co">admin@rook2root.co</a>
-                <p>
+                </p> admin @ rook 2 root.co<p>
                     x:{' '}
                     <Link href="https://x.com/darkpatterns" target="_blank" rel="noopener noreferrer">
                         @darkpatterns
