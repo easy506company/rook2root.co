@@ -17,10 +17,35 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const res = await getInsightsFrontmatter(slug, "articles");
   if (!res) return {};
-  const { title, description } = res;
-  return { title, description };
-}
 
+  const { title, description, cover } = res;
+  const url = `https://rook2root.co/articles/${slug}`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+      images: [
+        {
+          url: cover,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [cover],
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const val = await getAllInsightsStaticPaths('articles');
@@ -42,7 +67,7 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
       </Link>
       <div className="flex flex-col gap-3 pb-7 w-full mb-2">
         <p className="text-muted-foreground text-sm">{formatDate(res.frontmatter.date)}</p>
-        <h1 className="sm:text-4xl text-2xl font-extrabold">{res.frontmatter.title}</h1>
+        <h1 className="sm:text-4xl text-2xl">{res.frontmatter.title}</h1>
         <div className="mt-6 flex flex-col gap-3">
           <p className="text-sm text-muted-foreground">Posted by</p>
           <Authors authors={res.frontmatter.authors} />

@@ -6,7 +6,7 @@ import rehypePrism from "rehype-prism-plus";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import rehypeCodeTitles from "rehype-code-titles";
-import { library_routes } from "./library-routes-config";
+import { page_routes } from "./routes-config";
 import { visit } from "unist-util-visit";
 import matter from "gray-matter";
 import { getIconName, hasSupportedExtension } from "./utils";
@@ -119,10 +119,10 @@ export async function getTocs(slug: string, baseFolder: string) {
 }
 
 export function getPreviousNext(path: string) {
-  const index = library_routes.findIndex(({ href }) => href == `/${path}`);
+  const index = page_routes.findIndex(({ href }) => href == `/${path}`);
   return {
-    prev: library_routes[index - 1],
-    next: library_routes[index + 1],
+    prev: page_routes[index - 1],
+    next: page_routes[index + 1],
   };
 }
 
@@ -268,6 +268,7 @@ function rehypeCodeTitlesWithLogo() {
 }
 
 // strategies
+
 
 async function getAllMdxFiles(dir: string, base = ""): Promise<string[]> {
   const entries = await fs.readdir(dir, { withFileTypes: true });

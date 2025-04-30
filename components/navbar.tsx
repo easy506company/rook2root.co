@@ -39,6 +39,8 @@ const RIGHT_NAVLINKS = [
 	},
 ];
 
+const ALL_NAVLINKS = [...LEFT_NAVLINKS, ...RIGHT_NAVLINKS];
+
 // const algolia_props = {
 //   appId: process.env.ALGOLIA_APP_ID!,
 //   indexName: process.env.ALGOLIA_INDEX!,
@@ -96,7 +98,7 @@ export function Logo() {
 	);
 }
 
-export function NavMenu({ navLinks = LEFT_NAVLINKS, isSheet = false }) {
+export function NavMenu({ navLinks = ALL_NAVLINKS, isSheet = false }) {
 	return (
 		<>
 			{navLinks.map((item) => {

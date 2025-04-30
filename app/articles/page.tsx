@@ -6,7 +6,7 @@ import {
 } from "@/lib/markdown";
 import { formatDate2, stringToDate } from "@/lib/utils";
 import { Metadata } from "next";
-// import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -41,16 +41,18 @@ function BlogCard({
   title,
   description,
   slug,
-  // cover,
+  cover,
   authors,
 }: BlogMdxFrontmatter & { slug: string }) {
   return (
     <Link
       href={`/articles/${slug}`}
-      className="flex flex-col gap-2 items-start border rounded-md py-5 px-3 min-h-[400px]"
+      className="flex flex-col justify-between items-start border rounded-md py-5 px-3 min-h-[480px] h-[480px]"
     >
-      <h3 className="text-2xl font-semibold -mt-1 pr-7 text-pretty">{title}</h3>
-      {/* <div className="w-full">
+      {/* Title at the top */}
+      <h3 className="text-2xl -mt-1 pr-7 text-pretty">{title}</h3>
+      {/* Image in the middle, centered vertically */}
+      <div className="flex-1 flex items-center w-full">
         <Image
           src={cover}
           alt={title}
@@ -59,13 +61,16 @@ function BlogCard({
           quality={80}
           className="w-full rounded-md object-cover h-[180px] border"
         />
-      </div> */}
-      <p className="text-sm text-muted-foreground">{description}</p>
-      <div className="flex items-center justify-between w-full mt-auto">
-        <p className="text-[13px] text-muted-foreground">
-          Published on {formatDate2(date)}
-        </p>
-        <AvatarGroup users={authors} />
+      </div>
+      {/* Bottom section: description, date, users */}
+      <div className="flex flex-col gap-2 w-full mt-2">
+        <p className="text-sm text-muted-foreground">{description}</p>
+        <div className="flex items-center justify-between w-full">
+          <p className="text-[13px] text-muted-foreground">
+            Published on {formatDate2(date)}
+          </p>
+          <AvatarGroup users={authors} />
+        </div>
       </div>
     </Link>
   );
