@@ -1,7 +1,7 @@
 import DocsBreadcrumb from "@/components/docs-breadcrumb";
 import Pagination from "@/components/pagination";
 import Toc from "@/components/toc";
-import { library_routes } from "@/lib/library-routes-config";
+import { playbook_routes } from "@/lib/playbook-routes-config";
 import { notFound } from "next/navigation";
 import { getCompiledContentForSlug, getDocFrontmatter } from "@/lib/markdown";
 import { Typography } from "@/components/typography";
@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export function generateStaticParams() {
-  return library_routes.map((item) => ({
+  return playbook_routes.map((item) => ({
     slug: item.href.split("/").slice(1),
   }));
 }

@@ -6,7 +6,7 @@ import rehypePrism from "rehype-prism-plus";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import rehypeCodeTitles from "rehype-code-titles";
-import { page_routes } from "./routes-config";
+import { library_routes } from "./library-routes-config";
 import { visit } from "unist-util-visit";
 import matter from "gray-matter";
 import { getIconName, hasSupportedExtension } from "./utils";
@@ -98,8 +98,17 @@ export async function getCompiledContentForSlug(slug: string, type: string) {
   }
 }
 
-export async function getTocs(slug: string, baseFolder: string) {
-  const contentPath = path.join(process.cwd(), `/contents/${baseFolder}/`, `${slug}/index.mdx`);
+export async function getTocs(
+  slug: string,
+  baseFolder: string,
+  isFlatFile = false
+) {
+  let contentPath: string;
+  if (isFlatFile) {
+    contentPath = path.join(process.cwd(), `/contents/${baseFolder}/`, `${slug}.mdx`);
+  } else {
+    contentPath = path.join(process.cwd(), `/contents/${baseFolder}/`, `${slug}/index.mdx`);
+  }
 
   const rawMdx = await fs.readFile(contentPath, "utf-8");
   const headingsRegex = /^(#{2,4})\s(.+)$/gm;
@@ -119,10 +128,10 @@ export async function getTocs(slug: string, baseFolder: string) {
 }
 
 export function getPreviousNext(path: string) {
-  const index = page_routes.findIndex(({ href }) => href == `/${path}`);
+  const index = library_routes.findIndex(({ href }) => href == `/${path}`);
   return {
-    prev: page_routes[index - 1],
-    next: page_routes[index + 1],
+    prev: library_routes[index - 1],
+    next: library_routes[index + 1],
   };
 }
 

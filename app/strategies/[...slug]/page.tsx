@@ -15,9 +15,12 @@ type PageProps = {
 export async function generateStaticParams() {
   const strategies = await getAllStrategiesFrontmatter();
   if (!strategies) return [];
-  return strategies.map((strategy) => ({
-    slug: strategy.slug.split("/"),
-  }));
+  return strategies.map((strategy) => {
+    let arr = strategy.slug.split("/");
+    // Remove trailing "index" if present
+    if (arr[arr.length - 1] === "index") arr = arr.slice(0, -1);
+    return { slug: arr };
+  });
 }
 
 export default async function StrategyPage({ params }: PageProps) {

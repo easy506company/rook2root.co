@@ -3,7 +3,9 @@ import TocObserver from "./toc-observer";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default async function Toc({ path, baseFolder }: { path: string, baseFolder: string }) {
-  const tocs = await getTocs(path, baseFolder);
+  // Set isFlatFile true for strategies, false otherwise
+  const isFlatFile = baseFolder === "strategies";
+  const tocs = await getTocs(path, baseFolder, isFlatFile);
 
   return (
     <div className="xl:flex toc hidden w-[20rem] py-9 sticky top-16 h-[96.95vh] pl-6">
