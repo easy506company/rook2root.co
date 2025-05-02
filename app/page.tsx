@@ -22,21 +22,26 @@ export default function Home() {
       </p>
       <div className="sm:flex sm:flex-row grid grid-cols-2 items-center sm;gap-5 gap-3 mb-8">
         <Link
-          href={`/library${library_routes[0].href}`}
-          className={buttonVariants({ variant: "default", className: "px-6", size: "lg" })}
+          href="/articles"
+          className={buttonVariants({
+            variant: "default",
+            className: "px-6",
+            size: "lg"
+          })}
         >
-          Enter Library
+          Read Articles
         </Link>
         <Link
-          href="/articles"
+          href={`/library${library_routes[0].href}`}
           className={buttonVariants({
             variant: "secondary",
             className: "px-6",
             size: "lg",
           })}
         >
-          Read Articles
+          Enter Library
         </Link>
+
       </div>
       <span className="flex flex-col items-start text-left text-muted-foreground text-sm mt-5 -mb-12 max-[800px]:mb-12">
         <span className="font-semibold mb-2">
@@ -45,21 +50,21 @@ export default function Home() {
         <span className="font-semibold mb-2">
           v{process.env.APP_VERSION}
         </span>
-        <Link href="/articles/20250501-your-mind-monetized" className="hover:underline">
-          - featured article: Your mind, monetized...
+        <Link href="/articles/20250502-your-mind-monetized" className="hover:underline">
+          - featured article: Your mind, monetized.
         </Link>
-        <Link href="/blog/20250420-profiling-for-conversion" className="hover:underline">
-          - blog entry: Profiling for conversion
+        <Link href="/blog/20250502-profiling-for-conversion" className="hover:underline">
+          - blog entry: Profiling for conversion.
         </Link>
 
         <span className="font-semibold mb-2 mt-2">
           v0.1.3
         </span>
         <Link href="/library/exploitative-growth-and-platform-abuse/black-grey-hat-growth-hacking/black-hat-marketing" className="hover:underline">
-          - breakdown: social proof manipulation
+          - breakdown: social proof manipulation.
         </Link>
         <Link href="/library/user-influence-and-retention-engineering/retention-and-lock-in-tactics/friction-based-churn-suppression" className="hover:underline">
-          - breakdown: multi-step cancellation flows
+          - breakdown: multi-step cancellation flows.
         </Link>
       </span>
     </div>

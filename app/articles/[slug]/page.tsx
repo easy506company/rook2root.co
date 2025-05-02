@@ -84,7 +84,7 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
           />
         </div>
         <Typography>
-          <div className="text-[1.075rem] leading-7">{res.content}</div>
+          <div className="text-[0.9rem] md:text-[1.075rem] leading-7">{res.content}</div>
         </Typography>
       </div>
     </div>

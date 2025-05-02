@@ -55,7 +55,7 @@ export default async function StrategyPage({ params }: PageProps) {
           </div>
         )}
         <Typography>
-          <div className="text-[1.075rem] leading-7">
+          <div className="text-[0.9rem] md:text-[1.075rem] leading-7">
             {res.content}
           </div>
         </Typography>
