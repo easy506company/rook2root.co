@@ -28,6 +28,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import Caption from "@/components/markdown/caption";
 
 // add custom components
 const components = {
@@ -36,6 +37,7 @@ const components = {
   TabsContent,
   TabsList,
   TabsTrigger,
+  Caption,
   Image,
   pre: Pre,
   Note,
