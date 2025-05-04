@@ -1,7 +1,7 @@
 ---
 title: "Your mind, monetized - how AI companies can turn your prompts into buying triggers"
 description: "How AI companies collect, exploit, and monetize your private chat prompts — exposing you to privacy risks, psychographic profiling, and data-driven manipulation."
-date: 06-05-2025
+date: 05-05-2025
 authors:
   - avatar: "/admin_avatar.png"
     handle: rook2root
@@ -10,39 +10,42 @@ authors:
 cover: "/promo_your_mind.png"
 ---
 
--- need a hook
-
-New AI products are hitting the market at an explosive rate. As companies race to launch new products, they're also quietly normalizing the collection of user data.
-
-As companies race to launch new products, they're also quietly normalizing the collection and analysis of an intriguing kind of data — a blend of private conversation and machine-generated output.
+> New AI products are launching faster than regulators can blink.
+Behind the glossy marketing and innovation hype, a quieter pattern is emerging: the systematic capture of personal conversations, preferences, and psychological fingerprints — normalized, anonymized, and fed back into the machine.
 
 
-Chat log collection is the default for major AI companies, typically justified as "user experience improvements" or "for research purposes." OpenAI, for example, states in its privacy policy that it reserves the right to use anonymized data to "analyze the way our Services are being used, to improve and add features to them, and to conduct research."
+---
+
+♜ Chat log collection is the default for major AI companies, typically justified as "user experience improvements" or "for research purposes." OpenAI, for example, states in its privacy policy that it reserves the right to use anonymized data to "analyze the way our Services are being used, to improve and add features to them, and to conduct research."
 
 
 | Company                      | Claims Right to Use Prompts? | Data Retention                          | Opt-Out/Control                                                 | Human Review         | Privacy Rating |
 | ---------------------------- | ---------------------------- | --------------------------------------- | --------------------------------------------------------------- | -------------------- | -------------- |
-| **ChatGPT (OpenAI)**         | ✅ Yes                        | Retained until opt-out                  | Users can opt-out or request deletion                           | ❓ Unclear (data shared for monitoring safety)  | Fair           |
-| **Anthropic (Claude)**       | ⚠️ Yes (only if opt-in)               | Not used unless feedback provided       | Users can delete data and opt-in for training                   | ❌ No (only if flagged)                | Good           |
+| **ChatGPT (OpenAI)**         | ✅ Yes (by default)                        | Retained until opt-out                  | Users can opt-out or request deletion                           | ❓ Unclear (data shared for monitoring safety)  | Fair           |
+| **Anthropic (Claude)**       | ⚠️ Yes (only if opt-in)               | Not used unless feedback provided       | Users can delete data and opt-in for training                   | ❌ No (only if flagged)                | **Good**           |
 | **Google DeepMind (Gemini)** | ✅ Yes (by default)           | Loophole to retained data for up to 3 years      | Users can disable activity, but data still retained | ✅ Yes (aggressively) | Weak           |
 | **xAI (Grok)**               | ✅ Yes (by default)           | Retained 30 days (unless legal reasons) | Users can delete data within 30 days                            | ❓ Unclear            | Vague          |
 | **DeepSeek**                 | ✅ Yes (by default)           | Retained for legal compliance           | Users can delete chat history anytime                           | ❓ Unclear            | Weak           |
 
-<Caption>Links to privacy policies are available in the footnotes.</Caption>
+<Caption>Note: Links to privacy policies are available in the footnotes.</Caption>
 
 
 It’s important to note that the regulations mentioned above apply only to user-facing chat applications. For API usage, such metrics are typically not collected, so as not to discourage businesses from integrating their systems.
 
 The patterns we observe with the big five can be extrapolated to the tens of thousands of AI startups racing to deliver their products. Massive amounts of fascinating data are being harvested with minimal regulation.
 
-This opens a Pandora’s box of privacy risks — and no one is truly ready.
+----
+
+***This opens a Pandora’s box of privacy risks — and no one is truly ready.***
+
+----
 
 
 ## Not my jurisdiction
 
-Even Europe with it's strongest data protections laws (GDPR / DPA) is powerless in this struggle. Nothing shows this better then the fude between all the data protection agiencies in europe and deepseek - a chinease based company offering an AI chat bot similar to chatGPT.
+Even Europe, with its strongest data protection laws (GDPR / DPA), is powerless in this struggle. Nothing shows this better than the feud between Europe’s data protection agencies and DeepSeek - a chinease based company offering an AI chat bot similar to chatGPT.
 
-DeepSeek’s own privacy policy admits to collecting user chat logs. As the other players. They empasize that they - do not engage in profiling - which is a promising statement. 
+DeepSeek’s own privacy policy, like others, admits to collecting user chat logs. They empasize that they - do not engage in profiling - which is a promising statement. 
 
 As with other companies a lot of statements are very open to interpretation:
 - sharing data with 3rd party providers/suppliers
@@ -51,68 +54,66 @@ As with other companies a lot of statements are very open to interpretation:
 
 And of course, DeepsSeek operates under PRC law enforcement which is considered a hostile state by some western countries.
 
-Overall - Your data is safe until it becomes profitable to sell it.
+Overall - *Your data is safe until it becomes profitable to sell it.*
 
-In February, after a DeepSeek database containing sensitive chat logs and personal data was found exposed on the open internet, europe's finest jumped into action by demending GDPR and DPA complience proof from DeepSeek. Their response was simply:
+In February, after a DeepSeek database containing sensitive chat logs and personal data was found [exposed on the open internet](https://www.wiz.io/blog/wiz-research-uncovers-exposed-deepseek-database-leak), Europe's top data protection agencies jumped into action, demanding GDPR and DPA compliance proof from DeepSeek. Their response was simply:
 
-> "We don't operate under EU jurisdiction."
+> ["We don't operate under EU jurisdiction."](https://www.reuters.com/technology/artificial-intelligence/italys-privacy-watchdog-blocks-chinese-ai-app-deepseek-2025-01-30/)
 
-Only Italy took banning DeepSeek outright and setting a precedent.
-Other European countries issued only public warnings — weak gestures that did nothing to stop DeepSeek's operations.
+Only Italy moved to ban DeepSeek outright, setting a precedent.
+Other European countries issued public warnings — weak gestures that did nothing to force compliance or halt operations.
 
-## Muah.ai Data Breach
+## Muah.ai data breach
 
 Muah.ai is a platform where users can create and interact with AI companions, such as caring AI girlfriends, supportive boyfriends, or virtual therapists.
 
-Their terms of service doesn't mention any data protection principles anywhere and they are Framing themselves only as a "data processor": They claim they are "solely an AI processing service provider that processes data based on user input, (under GDPR if they collect user information like account details, chat history they would have obligations as a data controller). For security measure they assure us that they are - reasonabl.
 
-Muah.ai was hacked in Oct 2024 and leaked data from 1.9 million of users and which included chat prompts users gave to their AI companion and the users email addresses. Guess they were a data controller after all.
+Since they are a small AI-first company, it’s worth reading through their Terms of Service and Privacy Policy carefully.
+
+
+Their Privacy Policy does not mention any data protection principles, and they frame themselves solely as a "data processor." They claim to be "an AI processing service provider that processes data based on user input." (However, under GDPR, if they collect user information such as account details or chat history, they would also have obligations as a data controller.)
+
+For security measures, they assure users that they are "reasonable". From their Terms of Service, it is difficult to determine under which jurisdiction they operate. On the landing page, they mention California, but there is no reference to any registered legal entity anywhere.
+
+
+Weak policies eventually led to predictable outcomes. Muah.ai was [hacked in October 2024](https://www.linklaters.com/en/insights/blogs/digilinks/2024/october/the-muah-ai-data-breach---extortion-threats-and-cyber-vulnerabilities), leaking data from 1.9 million users, including chat prompts submitted to their AI companions and users' email addresses.
+
+
+Turns out, they were acting as a data controller after all.
+
 
 ## Implications
 
-The point is - data leaks of sensitive informations are arleady happening and will continue to happen especially since there's a lot of companies sacrificing security over having a product edge over devilish competiotion.
+Data leaks of sensitive information are already happening and will continue to happen, especially as many companies sacrifice security for a competitive edge against ruthless opponents.
 
-In the previous examples the concern is primary in 
+Based on the earlier examples, the threats fall into two main categories:
 
-A) threat actors trying to blackmail you by having compromising information on your private conversation with your AI girlfierd or your personal therapist.
+- Threat actors exploiting weak security to gain access to private conversations, then using compromising information to blackmail victims or sell the data on the black market.
 
-B) enemy states using your PII + chat log history to precisely target misinformation or worse - blackmail you into for intelligence services benefit
+- Hostile state actors leveraging compromised PII (Personally Identifiable Information) and chat history to conduct precision-targeted misinformation campaigns — or, in worse cases, to blackmail individuals for intelligence operations.
 
-My convern is a bit more nuaced.
-
-## AI and AdTech
+---
 
 
-
-However, Google's history with data collection and ads targeting (especially through services like Google Search, YouTube, and Android) provides a reasonable basis to strongly infer that they may leverage data across their platforms, even if it’s not explicitly stated.
-
+While blackmail and espionage are serious concerns, there’s a **more subtle risk at play**.
 
 
+## Unseen harvest: AI, psychographics, and the quiet capture of identity
+
+> Imagine walking into a world where every consumer behavior and preference is mapped out in intricate detail, all thanks to AI-driven qualitative analysis. This isn't the stuff of futurism; it's the cutting-edge reality of AI Psychographic Insights.
+
+<Caption>Source: [insight7.io](https://insight7.io/unveiling-psychographics-ai-driven-qualitative-analysis-for-consumer-profiling/)</Caption>
 
 
-" Imagine walking into a world where every consumer behavior and preference is mapped out in intricate detail, all thanks to AI-driven qualitative analysis. This isn't the stuff of futurism; it's the cutting-edge reality of AI Psychographic Insights. "
+This is how the new world of psychographic profiling is beginning to emerge. Traditionally, psychographics relied on user surveys — limited, self-reported, and often unreliable. Now, we have something different: models built with billions of parameters, capable of enriching consumer data with deep psychographic profiles — automatically, passively, and at massive scale.
 
-https://insight7.io/unveiling-psychographics-ai-driven-qualitative-analysis-for-consumer-profiling/
+Naturally, psychographic profiling runs into serious regulatory barriers.
 
-This one is from an 'ethical' approach, where you simply use the LLM to reverse engineer a behavioral & psychograpics profile based on the data that it already collected from a public data set.
+Under frameworks like GDPR (Europe), DPA (UK), and CCPA (California), collecting and analyzing deep psychological traits from user data is heavily regulated — or at least, in theory, it should be.
 
-OpenAI claims the right to use your prompsts for annonymized research, but they fold enough credit and social trust that I am willing to believe that this would be an actual research.
+But enforcement varies widely. Outside of California, much of the U.S. remains patchy when it comes to consumer data protection.
 
-
-
-That said, a certain AdTech company which owns Google Gemini might have different plans. Since using annonymized data can legally pass, there's cerntaily a way to create a high value model for 'AI psychograpic insights' to deliver to their users ''exeptional personalized experience'.
-
-> Google collects your chats (including recordings of your Gemini Live interactions), what you share with Gemini Apps (like files, images, and screens), related product usage information, your feedback, and info about your location. Info about your location includes the general area from your device, IP address, or Home or Work addresses in your Google Account. Learn more about location data at g.co/privacypolicy/location.
-
-> Google uses this data, consistent with our Privacy Policy, to provide, improve, and develop Google products and services and machine-learning technologies
-
-source: https://support.google.com/gemini/answer/13594961?hl=en#your_data
-
-Fortunantly in places like europe there are laws that prehbit (...). in a normal cercoumstances. extracting age + gender + psychometrics couldn't pass, under GDPR/CCPA it would be risky, 
-
-but I'm sure. They will find a best model even by try & guess optimizing system prompts from a general model. its their responsibility to shareholders to take action on such opportunities.
-
-adtech platforms seems to be fairly regulated - at least in the EU. the biggest players in the industry always proud themself on their ethical standars for collecting your data
+Legal frameworks might exist, but reality is more practical than idealistic. Many companies operate within gray zones: relying on implied consent, anonymized data loopholes, or simply constructing psychographic profiles outside the strict definitions of "personal data". One way or another, information about you almost always ends up in the hands of AdTech giants.
 
 <Image
   src="/articles-assets/acxiom-data-points.png"
@@ -124,26 +125,47 @@ adtech platforms seems to be fairly regulated - at least in the EU. the biggest 
   }
 />
 
+As you can see, half of the world's population — and nearly the entire U.S. population — has, knowingly or not, "consented" to handing over a comprehensive map of their lives.
 
-as you can see half of the world population and almost whole population of the US happily agreed to providing 1000+ attributes of you.
+Under GDPR, CCPA, and CPRA, enriching personally identifiable information (PII) with behavioral and psychographic attributes legally requires either **prior user consent** or a **very strong legitimate interest**.
 
-In order to enrich PII data - a common practice among data brokers - under GDPR/CCPA/CPRA you need you often Prior user consent and
-Very strong legitimate interest to do so. (I'm sure you gave this concent where you allowed yourself to be the data point on the image above)
 
-The question bothers me lately is: Given a 1000+ points on your demographic, behavioristic and psychographic information - how much better would a LLM model be in market segmentation, than some ML model used by compies right now?
+Few companies are better positioned to capitalize on these gray zones than AdTech giant Google.
+
+
+With vast access to user behavior across Search, YouTube, Android, and now Gemini, Google treats anonymized data as raw material — extracted, segmented, and deployed to drive personalized outcomes at scale.
+
+
+Given Google's history of regulatory fines and data protection violations, it would be reasonable to assume that their AI-driven initiatives are also optimized to enhance the precision of personalized ad campaigns.
+
+> Google collects your chats (including recordings of your Gemini Live interactions), what you share with Gemini Apps (like files, images, and screens), related product usage information, your feedback, and info about your location. Info about your location includes the general area from your device, IP address, or Home or Work addresses in your Google Account. Learn more about location data at g.co/privacypolicy/location.
+
+> Google uses this data, consistent with our Privacy Policy, to provide, improve, and develop Google products and services and machine-learning technologies
+
+source: [Google: what data is collected and how it’s used](https://support.google.com/gemini/answer/13594961?hl=en#your_data)
+
+---
+
+Where Google leads, the rest of the AdTech industry will inevitably follow.
+
 
 ## Final thoughts
 
-We havent had major public outrage over data misuse since Cambridge analytica. It sent a message - better stay away from polical subjects on a bigger scale or youll get burned. And AdTech adjusted and sticked with brands (doesnt mean that they don't have your full political profile)
+We haven't seen major public outrage over data misuse since [Cambridge Analytica](https://shyama.com/the-cambridge-analytica-scandal-how-psychographic-profiling-reshaped-digital-political-campaigns/). The outcome was clear: weaponizing political profiling at scale carries serious consequences.
 
-Maybe it's time for an outrage. to take a stand. to set a clear boundary in law and the reprocusion for breaching it.
+AdTech adapted, disappearing again into the shadows.
 
+Maybe it's time for another outrage.
+
+Not just noise — but a stand.
+
+A legal line carved in stone — **and no mercy for those who test it.**
 
 -----
 
 ♜ *At rook2root.co, we expose the tactics no one talks about. Not to moralize — just to make the game visible.*
 
-♜ *We're just getting started, and your support right now means everything. Hit [subscribe](https://rook2root.beehiiv.com/subscribe) or on share the story on [X](https://twitter.com/intent/tweet?url=https://rook2root.co/articles/) — every bit counts.*
+♜ *We're just getting started, and your support right now means everything. Hit [subscribe](https://rook2root.beehiiv.com/subscribe) or share the story on [X](https://twitter.com/intent/tweet?url=https://rook2root.co/articles/) — every bit counts.*
 
 -----
 
@@ -154,7 +176,7 @@ Wiz Research found an open ClickHouse database exposing over a million sensitive
 
 - usercentrics.com, [EU regulators scrutinize DeepSeek for data privacy violations](https://usercentrics.com/knowledge-hub/eu-regulators-scrutinize-deepseek-for-data-privacy-violations/) (Feb 2025) - DeepSeek faces mounting scrutiny from EU regulators for collecting and processing EU residents' personal data without complying with GDPR.
 
-- Italian Data Protection Authority, [Press release - Privacy protentions authority blocks DeepSeek](https://garanteprivacy.it/home/docweb/-/docweb-display/docweb/10097450#english) (Feb 2025)
+- Reuters, [Italy's regulator blocks Chinese AI app DeepSeek on data protection](https://www.reuters.com/technology/artificial-intelligence/italys-privacy-watchdog-blocks-chinese-ai-app-deepseek-2025-01-30/) (Feb 2025)
 
 - linklaters.com, [The muah.ai data breach – Extortion threats and cyber vulnerabilities](https://www.linklaters.com/en/insights/blogs/digilinks/2024/october/the-muah-ai-data-breach---extortion-threats-and-cyber-vulnerabilities) (Oct 2024) - Details on the muah.ai breach - a hack exposed 1.9M users’ private AI chat prompts and emails — including highly sensitive and illegal content.
 
@@ -186,5 +208,5 @@ Wiz Research found an open ClickHouse database exposing over a million sensitive
 
 - Vienna Teng, [The Hymn of Acxiom (customer intelligence platform)](https://www.youtube.com/watch?v=F7P2ViCRObs)
 
-> "...Someone is gathering every crumb you drop, these
-(mindless decisions and) moments you long forgot..."
+> ...Someone is gathering every crumb you drop, these
+(mindless decisions and) moments you long forgot...
