@@ -26,19 +26,18 @@ serve staticly built project:
 npx serve out
 ```
 
-Article meta example:
 
 ---
-title: ""
-description: ""
-date: 02-09-2024
-authors:
+- [] seo - open graph - articles & blog
 
-- avatar: "<https://ui.shadcn.com/avatars/02.png>"
-    handle: xyz
-    username: xyz
-    handleUrl: "<https://github.com/xyz>"
-
-cover: "<https://xyz.com/1.png>"
+<meta property="og:title" content="Affordable Land Deals in Poland" />
+<meta property="og:description" content="Browse and compare top land investment opportunities in Poland." />
+<meta property="og:image" content="https://example.com/image.jpg" />
+<meta property="og:url" content="https://example.com/page-url" />
+- [] twitter cards
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Affordable Land Deals in Poland" />
+<meta name="twitter:description" content="Explore real estate freedom." />
+<meta name="twitter:image" content="https://example.com/image.jpg" />
 
 ---

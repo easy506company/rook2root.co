@@ -10,21 +10,21 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "rook2root - Articles",
+  title: "rook2root - Blog",
 };
 
 export default async function BlogIndexPage() {
-  const blogs = (await getAllInsightsFrontmatter('articles')).sort(
+  const blogs = (await getAllInsightsFrontmatter('blog')).sort(
     (a, b) => stringToDate(b.date).getTime() - stringToDate(a.date).getTime()
   );
   return (
     <div className="flex flex-col gap-1 sm:min-h-[91vh] min-h-[88vh] pt-2">
       <div className="mb-7 flex flex-col gap-2">
         <h1 className="sm:text-3xl text-2xl font-extrabold">
-         Articles archive
+         Blog archive
         </h1>
         <p className="text-muted-foreground sm:text-[16.5px] text-[14.5px]">
-          What we’ve covered lately — no spin.
+          Clear answers to what actually matters.
         </p>
       </div>
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-8 gap-4 mb-5">
@@ -46,7 +46,7 @@ function BlogCard({
 }: BlogMdxFrontmatter & { slug: string }) {
   return (
     <Link
-      href={`/articles/${slug}`}
+      href={`/blog/${slug}`}
       className="flex flex-col justify-between items-start border rounded-md py-5 px-3 min-h-[480px] h-[480px]"
     >
       {/* Title at the top */}

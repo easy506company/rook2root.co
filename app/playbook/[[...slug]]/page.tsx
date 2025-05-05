@@ -1,7 +1,7 @@
 import DocsBreadcrumb from "@/components/docs-breadcrumb";
 import Pagination from "@/components/pagination";
 import Toc from "@/components/toc";
-import { library_routes } from "@/lib/library-routes-config";
+import { playbook_routes } from "@/lib/playbook-routes-config";
 import { notFound } from "next/navigation";
 import { getCompiledContentForSlug, getDocFrontmatter } from "@/lib/markdown";
 import { Typography } from "@/components/typography";
@@ -14,11 +14,11 @@ type PageProps = {
 };
 
 
-export default async function DocsPage({ params }: PageProps) {
+export default async function PlaybookPage({ params }: PageProps) {
   const { slug = [] } = await params;
 
   const pathName = slug.join("/");
-  const res = await getCompiledContentForSlug(pathName, "library");
+  const res = await getCompiledContentForSlug(pathName, "playbook");
 
   if (!res) notFound();
   return (
@@ -39,7 +39,7 @@ export default async function DocsPage({ params }: PageProps) {
         </div>
       </div>
 
-      <Toc path={pathName} baseFolder="library" />
+      <Toc path={pathName} baseFolder='playbook'/>
     </div>
   );
 }
@@ -47,12 +47,12 @@ export default async function DocsPage({ params }: PageProps) {
 export async function generateMetadata({ params }: PageProps) {
   const { slug = [] } = await params;
   const pathName = slug.join("/");
-  const res = await getDocFrontmatter(pathName, "library");
+  const res = await getDocFrontmatter(pathName, "playbook");
   if (!res) return {};
 
   const { title, metaDescription } = res;
 
-  const canonicalUrl = `https://rook2root.co/library/${pathName}`;
+  const canonicalUrl = `https://rook2root.co/playbook/${pathName}`;
 
   return {
     title,
@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export function generateStaticParams() {
-  return library_routes.map((item) => ({
+  return playbook_routes.map((item) => ({
     slug: item.href.split("/").slice(1),
   }));
 }
