@@ -26,7 +26,6 @@ serve staticly built project:
 npx serve out
 ```
 
-
 ---
 - [] seo - open graph - articles & blog
 
