@@ -1,5 +1,7 @@
 # rook2root.co
 
+Website build with Next.js, Tailwind, and AriaDocs as a starter
+
 ## Getting Started
 
 run the development server:
@@ -10,33 +12,25 @@ npm run dev
 
 ## Deploy
 
-Cloudflare automatically deploys every push to the main branch.
-In order to deploy develop from the main branch:
+Cloudflare automatically deploys every push from the `main` branch.
 
-```bash
-git merge develop
-git push
+
+## workflow
+
+- create your branch (e.g. feature/improving-seo) and work on it
+
+```sh
+git checkout main
+git pull
+git checkout -b eature/improving-seo
 ```
 
-## Tips
+- create a PR to main
+- merge after approval
 
-serve staticly built project:
+- to reuse the same branch for further work
 
-```bash
-npx serve out
+```sh
+git fetch origin
+git reset --hard origin/main
 ```
-
----
-- [] seo - open graph - articles & blog
-
-<meta property="og:title" content="Affordable Land Deals in Poland" />
-<meta property="og:description" content="Browse and compare top land investment opportunities in Poland." />
-<meta property="og:image" content="https://example.com/image.jpg" />
-<meta property="og:url" content="https://example.com/page-url" />
-- [] twitter cards
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Affordable Land Deals in Poland" />
-<meta name="twitter:description" content="Explore real estate freedom." />
-<meta name="twitter:image" content="https://example.com/image.jpg" />
-
----
