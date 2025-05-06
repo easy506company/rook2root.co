@@ -1,4 +1,6 @@
-// for page navigation & to sort on leftbar
+// This file defines the hierarchical structure and configuration for the "Ethical Playbook" navigation routes.
+// It exports a flat list of all library routes for use in navigation and linking throughout the site.
+
 
 import { type EachRoute } from "@/types/eachRoute";
 
