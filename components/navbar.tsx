@@ -1,5 +1,5 @@
 import { ModeToggle } from "@/components/theme-toggle";
-import { TwitterIcon, TerminalIcon } from "lucide-react";
+import { TwitterIcon, TerminalIcon, GithubIcon } from "lucide-react";
 import { playbook_routes } from "@/lib/playbook-routes-config";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
@@ -79,6 +79,15 @@ export function Navbar() {
 								})}
 							>
 								<TwitterIcon className="h-[1.1rem] w-[1.1rem]" />
+							</Link>
+							<Link
+								href="https://github.com/rook2root"
+								className={buttonVariants({
+									variant: "ghost",
+									size: "icon",
+								})}
+							>
+								<GithubIcon className="h-[1.1rem] w-[1.1rem]" />
 							</Link>
 							<ModeToggle />
 						</div>
