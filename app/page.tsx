@@ -14,11 +14,11 @@ export default function Home() {
         Under construction. Find us on X.{" "}
         <MoveUpRightIcon className="w-4 h-4 font-extrabold" />
       </Link>
-      <h1 className="text-[1.80rem] leading-8 sm:px-8 md:leading-[4.5rem] font-bold mb-4 sm:text-6xl text-left sm:text-center">
+      <h1 className="text-[1.80rem] leading-8 sm:px-8 md:leading-[4.5rem] font-bold mb-4 sm:text-6xl text-center sm:text-left">
         rook2root
       </h1>
-      <p className="mb-8 md:text-lg text-base  max-w-[1200px] text-muted-foreground text-left sm:text-center">
-        An open-source intelligence platform documenting strategies of influence, control, and resilience.
+      <p className="mb-8 md:text-lg text-base max-w-[1200px] text-muted-foreground text-center sm:text-left">
+        Explore deceptive ux patterns, growth tactics, and backend plays — documented, indexed, served cold.
       </p>
       <div className="sm:flex sm:flex-row grid grid-cols-2 items-center sm;gap-5 gap-3 mb-8">
         <Link
