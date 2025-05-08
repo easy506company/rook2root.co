@@ -18,7 +18,7 @@ export default function Home() {
         rook2root
       </h1>
       <p className="mb-8 md:text-lg text-base  max-w-[1200px] text-muted-foreground text-left sm:text-center">
-        Explore deceptive ux patterns, growth tactics, and backend plays — documented, indexed, served cold.
+        An open-source intelligence platform documenting strategies of influence, control, and resilience.
       </p>
       <div className="sm:flex sm:flex-row grid grid-cols-2 items-center sm;gap-5 gap-3 mb-8">
         <Link
