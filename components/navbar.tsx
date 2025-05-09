@@ -26,6 +26,10 @@ const LEFT_NAVLINKS = [
 		title: "Ethical Playbook",
 		href: `/playbook${playbook_routes[0].href}`,
 	},
+	{
+		title: "Awesome Psyop",
+		href: "/awesome-psyop",
+	},
 ];
 
 const RIGHT_NAVLINKS = [
@@ -37,6 +41,7 @@ const RIGHT_NAVLINKS = [
 		title: "About",
 		href: "/about",
 	},
+
 ];
 
 const ALL_NAVLINKS = [...LEFT_NAVLINKS, ...RIGHT_NAVLINKS];
@@ -111,12 +116,17 @@ export function NavMenu({ navLinks = ALL_NAVLINKS, isSheet = false }) {
 	return (
 		<>
 			{navLinks.map((item) => {
+				const isImportant = item.title === "Awesome Psyop";
 				const Comp = (
 					<Anchor
 						key={item.title + item.href}
 						activeClassName="!text-primary dark:font-medium font-semibold"
 						absolute
-						className="flex items-center gap-1 sm:text-sm text-[14.5px] dark:text-stone-300/85 text-stone-800"
+						className={`flex items-center gap-1 sm:text-sm text-[14.5px] ${
+							isImportant
+								? "text-primary font-extrabold bg-accent px-2 py-1 rounded-md"
+								: "dark:text-stone-300/85 text-stone-800"
+						}`}
 						href={item.href}
 					>
 						{item.title}
