@@ -1,8 +1,12 @@
 import type { NextConfig } from "next";
-import { version } from './package.json';
+import { version } from "./package.json";
+import withMDX from "@next/mdx";
 
+const withMdx = withMDX({
+  extension: /\.mdx?$/,
+});
 
-const nextConfig: NextConfig = {
+const baseConfig: NextConfig = {
   env: {
     APP_VERSION: version,
   },
@@ -12,15 +16,8 @@ const nextConfig: NextConfig = {
   },
   images: {
     unoptimized: true,
-    // remotePatterns: [
-    //   {
-    //     protocol: "https",
-    //     hostname: "",
-    //   },
-    // ],
   },
-  // if used turbopack
-  // transpilePackages: ["next-mdx-remote"],
+  pageExtensions: ["ts", "tsx", "mdx"],
 };
 
-export default nextConfig;
+export default withMdx(baseConfig);
