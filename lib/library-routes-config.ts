@@ -28,7 +28,7 @@ export const LIBRARY_ROUTES: EachRoute[] = [
         title: "Retention & Lock-in Tactics",
         noLink: true,
         href: "/retention-and-lock-in-tactics",
-        tag: "Nowe",
+        tag: "新着",
         items: [
           { title: "Vendor lock-in mechanics", href: "/vendor-lock-in-mechanics" },
           { title: "Forced action", href: "/forced-action" },
@@ -58,7 +58,7 @@ export const LIBRARY_ROUTES: EachRoute[] = [
         title: "Black/Grey Hat Growth Hacking",
         href: "/black-grey-hat-growth-hacking",
         noLink: true,
-        tag: "Nowe",
+        tag: "新着",
         items: [
           { title: "Black hat marketing", href: "/black-hat-marketing", tag: "●" },
           { title: "Grey hat growth hacking", href: "/grey-hat-growth-hacking" },

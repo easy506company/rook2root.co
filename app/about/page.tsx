@@ -9,13 +9,14 @@ export default function About() {
                     rook2root
                 </h1>
                 <p className="text-muted-foreground text-md font-medium mb-4">
-                    biznes to biznes
+                    ビジネスはビジネスだ
                 </p>
-                <p>Ujawniamy taktyki, o których nikt nie mówi.</p>
-                <p>Nie po to, by moralizować — ale by pokazać grę.</p>
+                <p>誰も語らない戦術を明かす。</p>
+                <p>説教のためではなく、ゲームの構造を見せるために。</p>
                 <p className="mt-4 mb-4">
-                    Chcesz przekazać cynk albo współpracować?
-                </p> admin @ rook 2 root.co<p>
+                    情報提供や協力のご希望はこちらへ：
+                </p> admin @ rook 2 root.co
+                <p>
                     x:{' '}
                     <Link href="https://x.com/darkpatterns" target="_blank" rel="noopener noreferrer">
                         @darkpatterns
@@ -23,11 +24,11 @@ export default function About() {
                 </p>
                 <div className="mt-8 flex flex-col items-center gap-2">
                     <span className="text-base text-muted-foreground font-medium text-md">
-                        Najnowsze analizy prosto na Twoją skrzynkę:
+                        最新の分析をメールで受け取る：
                     </span>
                     <Button asChild variant="ghost" size="lg">
                         <Link href="https://rook2root.beehiiv.com/subscribe">
-                            Zapisz się na aktualizacje
+                            アップデートを購読
                         </Link>
                     </Button>
                 </div>

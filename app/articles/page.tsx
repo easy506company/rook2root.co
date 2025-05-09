@@ -21,10 +21,10 @@ export default async function BlogIndexPage() {
     <div className="flex flex-col gap-1 sm:min-h-[91vh] min-h-[88vh] pt-2">
       <div className="mb-7 flex flex-col gap-2">
         <h1 className="sm:text-3xl text-2xl font-extrabold">
-         Articles archive
+          記事アーカイブ
         </h1>
         <p className="text-muted-foreground sm:text-[16.5px] text-[14.5px]">
-          What we’ve covered lately — no spin.
+          最近取り上げたテーマ — 加工なし、誤魔化しなし。
         </p>
       </div>
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-8 gap-4 mb-5">
@@ -85,9 +85,8 @@ function AvatarGroup({ users, max = 4 }: { users: Author[]; max?: number }) {
       {displayUsers.map((user, index) => (
         <Avatar
           key={user.username}
-          className={`inline-block border-2 w-9 h-9 border-background ${
-            index !== 0 ? "-ml-3" : ""
-          } `}
+          className={`inline-block border-2 w-9 h-9 border-background ${index !== 0 ? "-ml-3" : ""
+            } `}
         >
           <AvatarImage src={user.avatar} alt={user.username} />
           <AvatarFallback>

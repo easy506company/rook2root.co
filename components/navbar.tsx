@@ -11,46 +11,39 @@ import { SheetClose } from "@/components/ui/sheet";
 
 const LEFT_NAVLINKS = [
 	{
-		title: "Usługi",
+		title: "サービス",
 		href: "/services",
 	},
 	{
-		title: "Artykuły",
+		title: "記事",
 		href: "/articles",
 	},
 	{
-		title: "Biblioteka Eksploatacji",
+		title: "エクスプロイト・ライブラリ",
 		href: `/library${library_routes[0].href}`,
 	},
 	{
-		title: "Etyczny Playbook",
+		title: "倫理的プレイブック",
 		href: `/playbook${playbook_routes[0].href}`,
 	},
 	{
-		title: "Awesome Psyop",
-		href: "/awesome-psyop", // or translate as "Zestaw Anty-PsyOp" if you prefer
+		title: "オーサム・サイオプ",
+		href: "/awesome-psyop",
 	},
 ];
 
-
 const RIGHT_NAVLINKS = [
 	{
-		title: "Blog",
+		title: "ブログ",
 		href: "/blog",
 	},
 	{
-		title: "O nas",
+		title: "私たちについて",
 		href: "/about",
 	},
 ];
 
 const ALL_NAVLINKS = [...LEFT_NAVLINKS, ...RIGHT_NAVLINKS];
-
-// const algolia_props = {
-//   appId: process.env.ALGOLIA_APP_ID!,
-//   indexName: process.env.ALGOLIA_INDEX!,
-//   apiKey: process.env.ALGOLIA_SEARCH_API_KEY!,
-// };
 
 export function Navbar() {
 	return (
@@ -69,11 +62,9 @@ export function Navbar() {
 				</div>
 
 				<div className="flex items-center sm:justify-normal justify-between sm:gap-3 ml-1 sm:w-fit w-[90%]">
-					{/* Right-side nav links */}
 					<div className="md:flex hidden items-center gap-4 text-sm font-medium text-muted-foreground mr-2">
 						<NavMenu navLinks={RIGHT_NAVLINKS} />
 					</div>
-					{/* <AlgoliaSearch {...algolia_props} /> */}
 					<div className="flex items-center justify-between sm:gap-2">
 						<div className="flex ml-4 sm:ml-0">
 							<Link
@@ -116,7 +107,7 @@ export function NavMenu({ navLinks = ALL_NAVLINKS, isSheet = false }) {
 	return (
 		<>
 			{navLinks.map((item) => {
-				const isImportant = item.title === "Awesome Psyop";
+				const isImportant = item.title === "オーサム・サイオプ";
 				const Comp = (
 					<Anchor
 						key={item.title + item.href}
