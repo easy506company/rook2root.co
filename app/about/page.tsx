@@ -9,12 +9,12 @@ export default function About() {
                     rook2root
                 </h1>
                 <p className="text-muted-foreground text-md font-medium mb-4">
-                    business is business
+                    biznes to biznes
                 </p>
-                <p>We expose the tactics no one talks about.</p>
-                <p>Not to preach, but to illuminate.</p>
+                <p>Ujawniamy taktyki, o których nikt nie mówi.</p>
+                <p>Nie po to, by moralizować — ale by pokazać grę.</p>
                 <p className="mt-4 mb-4">
-                    Want to tip us off or collaborate?{' '}
+                    Chcesz przekazać cynk albo współpracować?
                 </p> admin @ rook 2 root.co<p>
                     x:{' '}
                     <Link href="https://x.com/darkpatterns" target="_blank" rel="noopener noreferrer">
@@ -23,11 +23,11 @@ export default function About() {
                 </p>
                 <div className="mt-8 flex flex-col items-center gap-2">
                     <span className="text-base text-muted-foreground font-medium text-md">
-                        Get our latest insights straight to your inbox:
+                        Najnowsze analizy prosto na Twoją skrzynkę:
                     </span>
                     <Button asChild variant="ghost" size="lg">
                         <Link href="https://rook2root.beehiiv.com/subscribe">
-                            Subscribe for updates
+                            Zapisz się na aktualizacje
                         </Link>
                     </Button>
                 </div>
