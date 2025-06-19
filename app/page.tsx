@@ -20,28 +20,39 @@ export default function Home() {
       <p className="mb-8 md:text-lg text-base  max-w-[1200px] text-muted-foreground text-center sm:text-left">
         An open-source intelligence platform documenting strategies of influence, control, and resilience.
       </p>
-      <div className="sm:flex sm:flex-row grid grid-cols-2 items-center sm;gap-5 gap-3 mb-8">
+      <div className="flex flex-col items-center justify-center gap-4 mb-8">
+        <div className="flex flex-row items-center justify-center gap-4">
+          <Link
+            href="/articles"
+            className={buttonVariants({
+              variant: "default",
+              className: "px-6",
+              size: "lg"
+            })}
+          >
+            Read Articles
+          </Link>
+          <Link
+            href={`/library${library_routes[0].href}`}
+            className={buttonVariants({
+              variant: "secondary",
+              className: "px-6",
+              size: "lg",
+            })}
+          >
+            Enter Library
+          </Link>
+        </div>
         <Link
-          href="/articles"
-          className={buttonVariants({
-            variant: "default",
-            className: "px-6",
-            size: "lg"
-          })}
-        >
-          Read Articles
-        </Link>
-        <Link
-          href={`/library${library_routes[0].href}`}
+          href={`/awesome-psyop`}
           className={buttonVariants({
             variant: "secondary",
             className: "px-6",
             size: "lg",
           })}
         >
-          Enter Library
+          Awesome Psyop
         </Link>
-
       </div>
       <span className="flex flex-col items-start text-left text-muted-foreground text-sm mt-5 -mb-12 max-[800px]:mb-12">
         <span className="font-semibold mb-2">
