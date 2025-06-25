@@ -62,17 +62,14 @@ export default function Home() {
           v{process.env.APP_VERSION}
         </span>
         <Link href="/articles/20250506-your-mind-monetized" className="hover:underline">
-          - featured article: Your mind, monetized.
+          - Isolation Countermeasure Protocol
         </Link>
 
         <span className="font-semibold mb-2 mt-2">
-          v0.1.3
+          v0.2.0
         </span>
-        <Link href="/library/exploitative-growth-and-platform-abuse/black-grey-hat-growth-hacking/black-hat-marketing" className="hover:underline">
-          - breakdown: social proof manipulation.
-        </Link>
-        <Link href="/library/user-influence-and-retention-engineering/retention-and-lock-in-tactics/friction-based-churn-suppression" className="hover:underline">
-          - breakdown: multi-step cancellation flows.
+        <Link href="/articles/20250506-your-mind-monetized" className="hover:underline">
+          - featured article: Your mind, monetized.
         </Link>
       </span>
     </div>
