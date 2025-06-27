@@ -61,7 +61,7 @@ export default function Home() {
         <span className="font-semibold mb-2">
           v{process.env.APP_VERSION}
         </span>
-        <Link href="/articles/20250506-your-mind-monetized" className="hover:underline">
+        <Link href="/awesome-psyop" className="hover:underline">
           - Isolation Countermeasure Protocol
         </Link>
 
