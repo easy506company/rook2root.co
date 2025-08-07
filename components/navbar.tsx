@@ -26,10 +26,10 @@ const LEFT_NAVLINKS = [
 		title: "Etyczny Playbook",
 		href: `/playbook${playbook_routes[0].href}`,
 	},
-	{
-		title: "Awesome Psyop",
-		href: "/awesome-psyop", // or translate as "Zestaw Anty-PsyOp" if you prefer
-	},
+	// {
+	// 	title: "Awesome Psyop",
+	// 	href: "/awesome-psyop", // or translate as "Zestaw Anty-PsyOp" if you prefer
+	// },
 ];
 
 
