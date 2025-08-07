@@ -26,10 +26,10 @@ const LEFT_NAVLINKS = [
 		title: "倫理的プレイブック",
 		href: `/playbook${playbook_routes[0].href}`,
 	},
-	{
-		title: "オーサム・サイオプ",
-		href: "/awesome-psyop",
-	},
+	// {
+	// 	title: "オーサム・サイオプ",
+	// 	href: "/awesome-psyop",
+	// },
 ];
 
 const RIGHT_NAVLINKS = [
