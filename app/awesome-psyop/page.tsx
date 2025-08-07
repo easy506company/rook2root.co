@@ -24,3 +24,8 @@
 //     </div>
 //   );
 // }
+
+// This page is intentionally disabled.
+export default function Page() {
+	return null;
+}
