@@ -43,7 +43,7 @@ export default function Home() {
             Enter Library
           </Link>
         </div>
-        <Link
+        {/* <Link
           href={`/awesome-psyop`}
           className={buttonVariants({
             variant: "secondary",
@@ -52,7 +52,7 @@ export default function Home() {
           })}
         >
           Awesome Psyop
-        </Link>
+        </Link> */}
       </div>
       <span className="flex flex-col items-start text-left text-muted-foreground text-sm mt-5 -mb-12 max-[800px]:mb-12">
         <span className="font-semibold mb-2">
@@ -60,13 +60,6 @@ export default function Home() {
         </span>
         <span className="font-semibold mb-2">
           v{process.env.APP_VERSION}
-        </span>
-        <Link href="/awesome-psyop" className="hover:underline">
-          - Isolation Countermeasure Protocol
-        </Link>
-
-        <span className="font-semibold mb-2 mt-2">
-          v0.2.0
         </span>
         <Link href="/articles/20250506-your-mind-monetized" className="hover:underline">
           - featured article: Your mind, monetized.
